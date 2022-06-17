@@ -98,6 +98,14 @@ main
 
 section {background-color:#ffe;padding:0.8rem;margin:1rem 0}
 
+section.data h3
+{
+  border-bottom:1px solid antiquewhite;
+  color:var(--base-color);  
+  padding:0.5rem;
+  background-color:#fff  
+}
+
 main h2
 {
   background-color:antiquewhite;
