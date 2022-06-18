@@ -11,10 +11,12 @@
   --color2:#fff
 }
 
+body {background:#221}
+
 #container-base 
 {
   color:var(--color-text);
-  background-color:#fff;    
+  background-color:#fff  
 }
 
 #container-base a 
@@ -27,7 +29,6 @@
   background-color:var(--base-color);
   padding:1rem;
   color:#fff;
-    
 }
 
 #top h1
@@ -66,7 +67,7 @@
 nav 
 {
   font-size:0.7rem;
-  background-color:var(--bg-color);  
+  background-color:var(--bg-color);    
 }
 
 nav ul
@@ -75,6 +76,7 @@ nav ul
   margin:0;
   border-top:1rem solid antiquewhite;
   border-bottom:1rem solid var(--bg-color);  
+  list-style:none
 }
 
 nav ul li
@@ -84,19 +86,26 @@ nav ul li
   padding:0.4rem 0.5rem
 }
 
+nav ul li.active
+{
+  border-color:black;
+}
+
 nav ul li a
 {
-  color:var(--base-color) 
+  color:var(--base-color);
+  display:block;
+  width:100%
 }
 
 main
 {
   min-height:5rem;
-  padding:0 0.2rem;
-  font-size:0.7rem  
+  padding:0 0.7rem;
+  font-size:0.7rem
 }
 
-section {background-color:#ffe;padding:0.8rem;margin:1rem 0}
+section {background-color:#f5f5f5;padding:0.8rem;margin:1rem 0;box-shadow:1px 1px 4px #444}
 
 section.data h3
 {
@@ -132,4 +141,38 @@ main ul li {list-style-type:disclosure-closed;line-height:200%;padding-left:0.3r
   color:#ff0
 }
 
+@media(min-width:1024px)
+{
+  body {margin:1rem}
+  
+  #container-base {max-width:1024px;margin:auto}
+    
+  nav
+  {
+    padding:0.5rem;
+    border-bottom:1rem solid var(--base-color);
+    background-color:var(--base-color);
+    border-bottom:0;
+    border-top:2rem solid #000;
+  }
+  
+  nav ul {display:flex;;border:0;}
+  
+  nav ul li
+  {
+    font-size:0.7rem;border-radius:5px 5px 0 0;
+    border-bottom:0.4rem solid var(--base-color);
+    padding:1rem;margin:0.2rem;background-color:#fff;
+    font-weight:bold;text-transform:uppercase;border-radius:5px;;
+    box-shadow:1px 1px 1px #000
+  }
+  
+  nav ul li:hover {background-color:beige}
+  
+  main {font-size:0.8rem}
+  main.two {display:flex;justify-content:space-around}
+  main.two section {width:49% }
+  
+  main h2 {font-size:1rem}
+}
 
