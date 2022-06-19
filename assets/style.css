@@ -5,10 +5,11 @@
 /* mobile */
 :root
 {
-  --color-text:#444;  
+  --color-text:#333;  
   --bg-color:#e9ebe8;
   --base-color:#aa423f;
-  --color2:#fff
+  --color2:#fff;
+  --color3:#ddd
 }
 
 body {background:#221}
@@ -105,7 +106,12 @@ main
   font-size:0.7rem
 }
 
-section {background-color:#f5f5f5;padding:0.8rem;margin:1rem 0;box-shadow:1px 1px 4px #444}
+main img {max-width:100%}
+
+section {background-color:#f5f5f5;padding:0.8rem;margin:1rem 0;clear:both}
+section .content {display:flex;margin:1rem 0}
+section .home img {border:0.2rem solid var(--color3)}
+section .home div {width:50%}  
 
 section.data h3
 {
@@ -145,7 +151,7 @@ main ul li {list-style-type:disclosure-closed;line-height:200%;padding-left:0.3r
 {
   body {margin:1rem}
   
-  #container-base {max-width:1024px;margin:auto}
+  #container-base {max-width:1200px;margin:auto}
     
   nav
   {
@@ -156,7 +162,7 @@ main ul li {list-style-type:disclosure-closed;line-height:200%;padding-left:0.3r
     border-top:2rem solid #000;
   }
   
-  nav ul {display:flex;;border:0;}
+  nav ul {display:flex;;border:0}
   
   nav ul li
   {
@@ -170,8 +176,12 @@ main ul li {list-style-type:disclosure-closed;line-height:200%;padding-left:0.3r
   nav ul li:hover {background-color:beige}
   
   main {font-size:0.8rem}
-  main.two {display:flex;justify-content:space-around}
-  main.two section {width:49% }
+  
+  .two {display:flex;justify-content:space-around}
+  .two section {width:49% }  
+  section .home div {width:50%}  
+  section#recursos .home ul {margin-left:2rem}  
+  section .home img {margin:0 0.5rem}
   
   main h2 {font-size:1rem}
 }
