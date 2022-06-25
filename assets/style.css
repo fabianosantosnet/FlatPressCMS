@@ -8,6 +8,8 @@
   --color-text:#333;  
   --bg-color:#e9ebe8;
   --base-color:#aa423f;
+  --link:#bf323f;
+  --hover:#ff323f;
   --color2:#fff;
   --color3:#ddd
 }
@@ -22,7 +24,13 @@ body {background:#221}
 
 #container-base a 
 {
-  text-decoration:none
+  text-decoration:none;
+  color:var(--link)
+}
+
+#container-base a:hover
+{
+  color:var(--hover)
 }
 
 #top
@@ -94,7 +102,7 @@ nav ul li.active
 
 nav ul li a
 {
-  color:var(--base-color);
+  color:var(--base-color) !important;;
   display:block;
   width:100%
 }
@@ -117,12 +125,15 @@ section#sobre {font-size:0.8rem;background-color:#ffb;color:brown;padding:0.2rem
 section#sobre a {color:brown;font-weight:bold}
 section#sobre blockquote {margin:1rem}
 
-section.data h3
+section.data .sub h3
 {
-  border-bottom:1px solid antiquewhite;
-  color:var(--base-color);  
-  padding:0.5rem;
-  background-color:#fff  
+  color:var(--base-color);    
+  border-bottom:0.1rem solid var(--color3);
+  line-height:160%
+}
+section.data .sub
+{
+  padding:0.5rem;  
 }
 
 main h2
@@ -137,6 +148,7 @@ main h2
 
 main ul {padding:0 1rem}
 main ul li {list-style-type:disclosure-closed;line-height:200%;padding-left:0.3rem}
+main pre {overflow:scroll;scroll-behavior:smooth}
 
 #bottom-copy
 {
