@@ -55,69 +55,76 @@
 				
 				<h2>História do FlatPress CMS</h2>
 				
-				<h3>Visão Geral do CMS</h3>
-				
-				<p>O FlatPress é um mecanismo de blog extensível multilíngue compatível com o padrão de código aberto que não requer um banco de dados para funcionar.
-					Os dados são armazenados em arquivos de texto (termo em inglês flatfile).</p>
-				
-				<p>O gerenciador de conteúdo (do termo em inglês Content Management System - CMS) foi concebido para ser simples, por isso implementou apenas um único usuário. É mais adequado para blogs pessoais ou sites de pequenas empresas.
-				   Além de implementar widgets, suas funções podem ser extendidas através de plugins.</p>
-				
-				<p>Suporta categorias e tags (por meio de plugin), também implementa um sistema de comentários, páginas estáticas e normais (posts) e um gerenciador de midia (com suporte a galeria).</p>
-				
-				<p>Seu editor utiliza a linguagem de marcação simples chamada <a href="https://wiki-flatpress-org.translate.goog/doc:plugins:bbcode?_x_tr_sl=auto&_x_tr_tl=pt&_x_tr_hl=en-US&_x_tr_pto=wapp">BBCode</a> dispensando o uso de HTML.</p>
-				
-				<p>O sistema foi escrito na linguagem PHP e utiliza o <a href="https://smarty-php.github.io/smarty/">Smarty</a> para os templates.</p>
-				
-				<p>FlatPress não é “WordPress em arquivos simples”. Os plugins do WordPress geralmente não funcionam no FlatPress, muito embora, com algumas linhas de código possam funcionar.</p>
-								
-				<p>O projeto é mantido pela comunidade de <a href="https://github.com/flatpressblog/flatpress/blob/master/CONTRIBUTORS.md">desenvolvedores voluntários</a> e 			
-				  distribuído de forma gratuita sob os termos da <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">Licença Pública Geral (GPL v2)</a>, 
-					você é livre para usá-lo para qualquer finalidade e também para adaptar e alterar o código-fonte de acordo com suas necessidades, porém sem garantias.</p>
-				
-				<h3>Linha do tempo</h3>
-				<p>Informações abaixo de atualizações.</p>
-				
-				<ul>
-					<li>2006
-						<ul>
-							<li>Fevereiro - Disponibilizado o primeiro arquivo do CMS <a href="https://web.archive.org/web/20070703015659/http://www.nowhereland.it/downloads/?M=A">FlatPress 060219</a> nos archives do site oficial do desenvolvedor marcando o nascimento do projeto em 19/02/2006.</li>
-							<li>Abril - Disponibilizado em 16/04/2006 a <a href="https://www.flatpress.org/2006/04/16/flatpress-060416-out/">primeira versão pré-alpha 060416</a> postada no blog - suporte ao PHP4</li>
-							<li>Maio - Lançado o novo pacote desenvolvido e disponibilizado os zips antigos em <a href="http://www.nowhereland.it">seu site oficial</a>, devido às restrições do modo de segurança, revertido permissões para 0777, corrigido bugs: de redirecionamento na url 'admin/', caminho errado para o tema javascript, interface polida; E… Apresentando um novo procedimento de configuração à prova de falhas; Corrigido grande bug de exclusão recursiva de comentário; Também disponibilizado o <a href="https://web.archive.org/web/20070303003021if_/http://www.nowhereland.it:80/downloads/fp-logo.png">primeiro rascunho do logotipo</a>; no final do mês foi realizado uma organização geral do painel de entrada.</li>
-							
-							<li>Junho - Dia 15 foi lançado o primeiro release Candidate. A maioria dos bugs foram corrigidos, e recursos ainda não implementados, como o editor de plugins e o editor de blocos, 
-								foram substituídos por dois bons editores de arquivos de configuração.</li>
-							
-							<li>Agosto - Foram implementadas várias <a href="https://www-flatpress-org.translate.goog/2006/08/03/new-update/?_x_tr_sl=auto&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp">aualizações</a> incluindo melhoria no layout de objetos, melhor aproveitamento do Smarty e inclusão de categoria; também correção de bug ao filtrar por data, adicionado função de Upload cheia de recursos e ajustado tema flatmaas2 no IE.</li>
-							
-							<li>Setembro - Função data para temas; Adição do get.php para recuperar arquivo de forma encapsulada; Comportamento alterado com plugin blockparser. Agora, para adicionar um bloco, basta criar uma página estática e atribuir um nome a ela (a caixa de texto na parte inferior)! Em seguida, adicione uma linha com 'blockparser:nameofthestaticpage' aos seus widgets (verifique se o blockparser está na sua lista de plugins) e, em seguida, vualá! Aqui está sua página estática como um bloco; Corrigido o contador que era atribuído duplicado; Alterado lightboxV1 para ligthboxV2 e utilizado o dp.SyntaxHighlighter como plugin. Melhorias no Smarty e correção de inconsistência de data no salvamento de arquivos no <span title="Simple PHP Blog">SPB</span>. Abertura de seção de discussão no forum sobre o CMS no <a href="https://web.archive.org/web/20070901000000*/http://spbitalia.altervista.org/">SPB Italia</a>. Anunciado o <a href="https://www.flatpress.org/2006/09/23/announcing-release-candidate/">Primeiro Release Candidate FlatPress 0.610-RC1</a>. Lançado o <a href="https://web.archive.org/web/20061022033552/http://fpthemes.nowhereland.it/">primeiro tema Gespaa</a>, portado do Wordpress no novo subdominio fpthemes.</li>
-							
-							<li>Outubro - Novos temas Almost-Spring, Kubrick Theme e Simpla. Segundo Release Candidade disponibilizado e suporte ao BBCODE para comentários.</li>
-							
-							<li>Novembro - Primeiro release - RC3 - em novo repositório no <a href="https://sourceforge.net/projects/flatpress/files/flatpress/flatpress-0.611-RC3/">SourceForge</a>. A primeira versão estável <a href="https://sourceforge.net/projects/flatpress/files/flatpress/flatpress-0.611-final/">FlatPress 0.611 Final</a> foi lançada em 13/11/2006. Foi disponibilizado a <a href="https://lists.sourceforge.net/lists/listinfo/flatpress-devel">Mail Listing</a> para aqueles que desejavam se inscrever e contribuir com o desenvolvimento do projeto. <a href="https://web.archive.org/web/20070426222101/http://flatpress.nowhereland.it/static.php?page=faq">FAQ </a> adicionado.</li>
-							
-							<li>Dezembro - Criado um plugin simples QuickSpamFilter para limitar ataques de spammers. Lançado a <a href="https://www-flatpress-org.translate.goog/2006/12/20/0612-rc1-flatpress-0612-rc1-out/?_x_tr_sl=auto&_x_tr_tl=pt&_x_tr_hl=en-US&_x_tr_pto=wapp">versão 0.612-RC1</a> com novos plugins como LastComments, Askimet Antispam, PrettyURLs, Calendar, AdminArea, Categories. Implementado recurso para utilizar outra página como inicial em defaults.php (constante INDEX, padrão é blog.php), poucos dias depois foi lançada a versão Flatpress 0.612-final incluindo correções de bugs no bbcode + lightbox + thumb + popup e um pouco de limpeza de código, o plugin Archives não mostrava os links por meses.</li>
-						</ul>
-					</li>
-					<!--
-					<li>2007
-						<ul>
-							<li></li>
-							<li></li>
-						</ul>						
-					</li>
+				<div class="sub sub2">
+					<h3>Visão Geral do CMS</h3>
+
+					<p>O FlatPress é um mecanismo de blog extensível multilíngue compatível com o padrão de código aberto que não requer um banco de dados para funcionar.</p>
 					
-					<li>2008
-						<ul>
-							<li></li>
-							<li></li>
-						</ul>						
-					</li>	
-					...
-					-->
-				</ul>
+					<p>Criado para ser compatível com as entradas do <a href="https://sourceforge.net/projects/sphpblog/">Simple PHP Blog</a>, os dados são armazenados em arquivos de texto (termo em inglês flatfile).</p>
+					
+					<p>O gerenciador de conteúdo (do termo em inglês Content Management System - CMS) foi concebido para ser simples, por isso implementou apenas um único usuário. É mais adequado para blogs pessoais ou sites de pequenas empresas.
+					   Além de implementar widgets, suas funções podem ser extendidas através de plugins (baseado no mesmo sistema de plugins do WordPress).</p>
+
+					<p>Suporta categorias e tags (por meio de plugin), também implementa um sistema de comentários, páginas estáticas e normais (posts) e um gerenciador de midia (com suporte a galeria).</p>
+
+					<p>Seu editor utiliza a linguagem de marcação simples chamada <a href="https://wiki-flatpress-org.translate.goog/doc:plugins:bbcode?_x_tr_sl=auto&_x_tr_tl=pt&_x_tr_hl=en-US&_x_tr_pto=wapp">BBCode</a> dispensando o uso de HTML.</p>
+
+					<p>O sistema foi escrito na linguagem PHP e utiliza o mecanismo de template <a href="https://smarty-php.github.io/smarty/">Smarty</a> para que o desenvolvedor tenha mais flexibilidade ao criar um tema.</p>
+
+					<p>FlatPress não é “WordPress em arquivos simples”. Os plugins do WordPress geralmente não funcionam no FlatPress, muito embora, com algumas linhas de código possam funcionar.</p>
+
+					<p>O projeto é mantido pela comunidade de <a href="https://github.com/flatpressblog/flatpress/blob/master/CONTRIBUTORS.md">desenvolvedores voluntários</a> e 			
+					  distribuído de forma gratuita sob os termos da <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">Licença Pública Geral (GPL v2)</a>, 
+						você é livre para usá-lo para qualquer finalidade e também para adaptar e alterar o código-fonte de acordo com suas necessidades, porém sem garantias.</p>
+
+					<br />
+						
+					<h3>Linha do tempo</h3>
+					<p>Informações abaixo de atualizações.</p>
+
+					<ul>
+						<li>2006
+							<ul>
+								<li>Fevereiro - Disponibilizado o primeiro arquivo do CMS <a href="https://web.archive.org/web/20070703015659/http://www.nowhereland.it/downloads/?M=A">FlatPress 060219</a> nos archives do site oficial do desenvolvedor marcando o nascimento do projeto em 19/02/2006.</li>
+								<li>Abril - Disponibilizado em 16/04/2006 a <a href="https://www.flatpress.org/2006/04/16/flatpress-060416-out/">primeira versão pré-alpha 060416</a> postada no blog - suporte ao PHP4</li>
+								<li>Maio - Lançado o novo pacote desenvolvido e disponibilizado os zips antigos em <a href="http://www.nowhereland.it">seu site oficial</a>, devido às restrições do modo de segurança, revertido permissões para 0777, corrigido bugs: de redirecionamento na url 'admin/', caminho errado para o tema javascript, interface polida; E… Apresentando um novo procedimento de configuração à prova de falhas; Corrigido grande bug de exclusão recursiva de comentário; Também disponibilizado o <a href="https://web.archive.org/web/20070303003021if_/http://www.nowhereland.it:80/downloads/fp-logo.png">primeiro rascunho do logotipo</a>; no final do mês foi realizado uma organização geral do painel de entrada.</li>
+
+								<li>Junho - Dia 15 foi lançado o primeiro release Candidate. A maioria dos bugs foram corrigidos, e recursos ainda não implementados, como o editor de plugins e o editor de blocos, 
+									foram substituídos por dois bons editores de arquivos de configuração.</li>
+
+								<li>Agosto - Foram implementadas várias <a href="https://www-flatpress-org.translate.goog/2006/08/03/new-update/?_x_tr_sl=auto&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp">aualizações</a> incluindo melhoria no layout de objetos, melhor aproveitamento do Smarty e inclusão de categoria; também correção de bug ao filtrar por data, adicionado função de Upload cheia de recursos e ajustado tema flatmaas2 no IE.</li>
+
+								<li>Setembro - Função data para temas; Adição do get.php para recuperar arquivo de forma encapsulada; Comportamento alterado com plugin blockparser. Agora, para adicionar um bloco, basta criar uma página estática e atribuir um nome a ela (a caixa de texto na parte inferior)! Em seguida, adicione uma linha com 'blockparser:nameofthestaticpage' aos seus widgets (verifique se o blockparser está na sua lista de plugins) e, em seguida, vualá! Aqui está sua página estática como um bloco; Corrigido o contador que era atribuído duplicado; Alterado lightboxV1 para ligthboxV2 e utilizado o dp.SyntaxHighlighter como plugin. Melhorias no Smarty e correção de inconsistência de data no salvamento de arquivos no <span title="Simple PHP Blog">SPB</span>. Abertura de seção de discussão no forum sobre o CMS no <a href="https://web.archive.org/web/20070901000000*/http://spbitalia.altervista.org/">SPB Italia</a>. Anunciado o <a href="https://www.flatpress.org/2006/09/23/announcing-release-candidate/">Primeiro Release Candidate FlatPress 0.610-RC1</a>. Lançado o <a href="https://web.archive.org/web/20061022033552/http://fpthemes.nowhereland.it/">primeiro tema Gespaa</a>, portado do Wordpress no novo subdominio fpthemes.</li>
+
+								<li>Outubro - Novos temas Almost-Spring, Kubrick Theme e Simpla. Segundo Release Candidade disponibilizado e suporte ao BBCODE para comentários.</li>
+
+								<li>Novembro - Primeiro release - RC3 - em novo repositório no <a href="https://sourceforge.net/projects/flatpress/files/flatpress/flatpress-0.611-RC3/">SourceForge</a>. A primeira versão estável <a href="https://sourceforge.net/projects/flatpress/files/flatpress/flatpress-0.611-final/">FlatPress 0.611 Final</a> foi lançada em 13/11/2006. Foi disponibilizado a <a href="https://lists.sourceforge.net/lists/listinfo/flatpress-devel">Mail Listing</a> para aqueles que desejavam se inscrever e contribuir com o desenvolvimento do projeto. <a href="https://web.archive.org/web/20070426222101/http://flatpress.nowhereland.it/static.php?page=faq">FAQ </a> adicionado.</li>
+
+								<li>Dezembro - Criado um plugin simples QuickSpamFilter para limitar ataques de spammers. Lançado a <a href="https://www-flatpress-org.translate.goog/2006/12/20/0612-rc1-flatpress-0612-rc1-out/?_x_tr_sl=auto&_x_tr_tl=pt&_x_tr_hl=en-US&_x_tr_pto=wapp">versão 0.612-RC1</a> com novos plugins como LastComments, Askimet Antispam, PrettyURLs, Calendar, AdminArea, Categories. Implementado recurso para utilizar outra página como inicial em defaults.php (constante INDEX, padrão é blog.php), poucos dias depois foi lançada a versão Flatpress 0.612-final incluindo correções de bugs no bbcode + lightbox + thumb + popup e um pouco de limpeza de código, o plugin Archives não mostrava os links por meses.</li>
+							</ul>
+							...
+						</li>
+						<!--
+						<li>2007
+							<ul>
+								<li></li>
+								<li></li>
+							</ul>						
+						</li>
+
+						<li>2008
+							<ul>
+								<li></li>
+								<li></li>
+							</ul>						
+						</li>	
+						...
+						-->
+					</ul>
 				
 				<p></p>
+					
+				</div>
 				
 				<div class="sub">
 					<h3></h3>
