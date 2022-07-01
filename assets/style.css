@@ -14,6 +14,26 @@
   --color3:#ddd
 }
 
+ /* INI Code highlight */
+.minilight {
+    font-family:mono,monospace !important;
+    white-space: pre;    
+    background-color:#fff;    
+    padding:15px;
+    overflow-x: auto;
+    box-shadow: 1px 1px 2px #48c;
+    border-radius: 0.2em;
+    display:block;
+    width:97%;
+    margin:auto;
+    font-size:11px;
+    line-height:140%; 
+}
+
+.minilight .s {color:blue !important;}
+/* END Code highlight */
+
+
 body {background:#221}
 
 #container-base 

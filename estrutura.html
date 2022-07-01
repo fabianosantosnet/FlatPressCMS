@@ -28,7 +28,7 @@
 	<link rel="canonical" href="https://fabianosantosnet.github.io/FlatPressCMS/">
 	<link rel="stylesheet" href="assets/style.css">
 
-	<script src="assets/scripts.js" defer></script>
+	<script src="assets/script.js" defer></script>
 	  
   </head>
   <body>
@@ -45,7 +45,10 @@
 		<nav>  
 		  <ul>
 			<li><a href="./index.html" title="Página inicial">Início</a></li>
-			<li class="active"><a href="./estrutura.html" title="">Estrutura</a></li>			
+			<li><a href="./instalacao.html" title="">Instalação</a></li>
+			<li><a href="./historico.html" title="">Histórico</a></li>
+			<li class="active"><a href="./estrutura.html" title="">Estrutura</a></li>			  
+			<li><a href="https://git.fabianosantos.net/doar" title="Doe">Doar</a></li>
 		  </ul> 
 		</nav>
 
@@ -57,9 +60,50 @@
 				
 				<div class="sub">
 					<h3>Tecnologias</h3>
-					<p>Basicamente as tecnologias utilizadas no CMS são: arquivos JSON, HTML, CSS, JavaScript e PHP e texto com BBCODE.</p>
+					<p>Basicamente as tecnologias utilizadas no CMS são: arquivos HTML, CSS, JavaScript e PHP.</p>
+					<p>Para o conteúdo é utilizado o <a href="sceditor.com">SCEditor</a></p>
+
+					<p>Frameworks e Bibliotecas: <a href="https://www.smarty.net/" rel="nofollow">Smarty Template Engine</a>, <a href="http://christian-seiler.de/projekte/php/bbcode/index_en.html" rel="nofollow">BBCode Parser</a>,
+					   <a href="https://jquery.com/" rel="nofollow">jQuery</a>, <a href="https://jqueryui.com/" rel="nofollow">jQuery UI</a>, <a href="https://www.digitalia.be/software/slimbox2/" rel="nofollow">SlimBox2</a> e
+					   <a href="https://photoswipe.com/" rel="nofollow">PhotoSwipe</a>.</p>
 					
+					<p>Arquivos suportados para upload jpg, jpeg, gif e png</p>
 				</div>
+
+				<div class="sub">
+					<h3>Banco de dados</h3>
+					<p>Abaixo de forma resumida como é estruturado os arquivos de <em>fp-content</em>.</p>
+<code><pre>
+[$content]
+	|
+	|-- [$year] // 2 dígitos para o ID do ano (05 para 2005)
+	|       |
+	|       |-- [$month]  //dois dígitos para o ID do mês (01 para Janeiro)
+	|               |
+	|               |-- entryYYMMDD-HHMMSS.txt
+	|               |-- [entryYYMMDD-HHMMSS]
+	|	            |
+	|			    |-- rating.txt
+	|			    |-- view_counter.txt
+	|			    |-- [comments]
+	|			             |
+	|				     	 |-- commentYYMMDD-HHMMSS.txt
+	|
+	|-- [static]
+			|
+			|-- $filename.txt
+</pre></code>			
+
+	 <p>A entrada <b>entryYYMMDD-HHMMSS.txt</b> deve ser única e, portanto, pode ser considerado como o campo ID de uma tabela em um banco de dados.</p>
+
+				</div>		
+				
+<!--				<div class="sub">
+					<h3>Organização versão 1.2.1 default</h3>
+<code class="minilight">
+	
+</code>			
+				</div>				-->
 				
 			</section>
 
