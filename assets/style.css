@@ -21,13 +21,13 @@
     background-color:#fff;    
     padding:15px;
     overflow-x: auto;
-    box-shadow: 1px 1px 2px #48c;
+    box-shadow: 1px 1px 2px var(--base-color);
     border-radius: 0.2em;
     display:block;
     width:97%;
     margin:auto;
-    font-size:11px;
-    line-height:140%; 
+    font-size:0.69rem;
+    line-height:140%
 }
 
 .minilight .s {color:blue !important;}
