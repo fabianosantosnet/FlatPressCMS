@@ -121,7 +121,7 @@
 	sitemap.php
 	static.php
 	
-	admin/
+	<span>admin/</span>
 	     admin-inline.tpl
 		 index.php
 		 main.php
@@ -213,25 +213,466 @@
 			admin.css
 	
 	docs/	
-	    ...
+	    README-SmartyValidate
+		spb_db.txt
 	
 	fp-content/
-			  ...
+			  delete.me
 	
 	fp-defaults/
-				...
+			   plugins.conf.php
+			   settings-defaults.php
+			   widgets.conf.php
 	
 	fp-includes/
-				...
+			   core/
+				   core.administration.php
+				   core.blogdb.php
+				   core.bplustree.class.php
+				   core.cache.php
+				   core.comment.php
+				   core.config.php
+				   core.cookie.php
+				   core.date.php
+				   core.draft.php
+				   core.entry.php
+				   core.fileio.php
+				   core.filesystem.php
+				   core.fpdb.class.php
+				   core.language.php
+				   core.layout.php
+				   core.plugins.php
+				   core.session.php
+				   core.static.php
+				   core.system.php
+				   core.theme.php
+				   core.users.php
+				   core.utils.php
+				   core.widgets.php
+				   core.wp-default-filters.php
+				   core.wp-formatting.php
+				   core.wp-functions.php
+				   core.wp-functions-compat.php
+				   core.wp-options.php
+				   core.wp-pluggable-funcs.php
+				   core.wp-pluggable-funcs_old.php
+				   core.wp-plugin-interface.php
+				   function.list_categories.php
+				   includes.php
+				   
+			   smarty/
+					 Smarty.class.php
+					 Smarty_Compiler.class.php
+					 SmartyValidate.class.php
+					 Config_File.class.php
+					 debug.tpl
+
+					 internals/
+					 plugins/
 	
 	fp-interface/
+				lang/
+				cs-cz/	
+				en-us/
 				...
+				pt-br/
+					 lang.admin.config.php
+					 lang.admin.entry.php
+					 lang.admin.main.php
+					 lang.admin.maintain.php
+					 lang.admin.php
+					 lang.admin.plugin.php
+					 lang.admin.static.php
+					 lang.admin.themes.php
+					 lang.admin.uploader.php
+					 lang.admin.widgets.php
+					 lang.comments.php
+					 lang.comments.php
+					 lang.contact.php
+					 lang.default.php
 	
+				sharedtpl/
+						 atom.tpl
+						 commentadminctrls.tpl
+						 comment-atom.tpl
+						 comment-form.tpl
+						 commentmail.tpl
+						 comment-rss.tpl	
+						 comments.tpl
+						 contact.tpl
+						 entryadminctrls.tpl
+						 errorlist.tpl
+						 form.css
+						 login.tpl
+						 login_success.tpl
+						 rss.tpl
+						 search.tpl
+						 search_results.tpl
+	
+				themes/
+					  leggero/
+						     admin.tpl
+						     comments.tpl
+						     cpheader.tpl
+						     default.tpl
+						     entry-default.tpl
+						     footer.tpl
+						     header.tpl
+						     id
+						     index.tpl
+						     preview.png
+						     preview.tpl
+						     previewstatic.tpl
+						     static.tpl
+						     theme.conf.php
+						     widgets.tpl
+
+						     flatmaas-rev/
+									     preview.png
+									     style.conf.php
+	
+									     imgs/
+										     arrow.gif
+										     backshade.png
+										     backshade-2.png
+										     backshade-3.png
+										     blockquote.png
+										     entry.png
+										     fp-logo.png
+										     fp-logo-crop.jpg
+										     fp-logo-crop.png
+										     sf_h4.png
+										     shade.png
+										     transp.gif
+
+									     res/
+										    admin.css
+										    column.css
+										    common.css
+										    globals.css
+										    style.css
+										    toggleMenu.js
+
+						     leggero/
+							  	    preview.png
+								    style.conf.php
+
+								    imgs/
+									    backshade.png
+									    backshade-2.png
+									    backshade-3.png
+									    buttonsh.png
+									    buttonsh2.png
+									    shade.png
+
+								    res/
+									   admin.css
+									   column.css
+									   common.css
+									   globals.css
+									   print.css
+									   style.css
+
+						     leggero-v2/
+									   preview.png
+									   style.conf.php
+
+									   imgs/
+										   back.jpg
+										   backshade.png
+										   buttonsh.png
+										   buttonsh2.png
+	
+									   res/
+									      admin.css
+									      column.css
+									      common.css
+									      globals.css
+									      print.css
+									      style.css
+
 	fp-plugins/
-				...
+			  delete.me
+
+			  accessibleantispam/
+								plugin.accessibleantispam.php
+								lang/
+									lang.cs-cz.php
+									...
+									lang.pt-br.php
+
+			  adminarea/
+					   plugin.adminarea.php					   
+					   lang/
+						   lang.cs-cz.php
+						   ...
+						   lang.pt-br.php
+
+			  akismet/
+					 plugin.akismet.php
+	
+					 inc/
+						Akismet.class.php
+	
+					 lang/
+						 lang.cs-cz.php
+						 ...
+						 lang.pt-br.php
+	
+					 tpls/
+						 admin.plugin.akismet.tpl
+	
+			  archives/
+					  plugin.archives.php
+					  lang/
+					      lang.cs-cz.php
+					      ...
+					      lang.pt-br.php
+	
+			  bbcode/
+					authors
+					ChangeLog
+					install
+					license
+					thanks
+
+					plugin.bbcode.php
+
+					inc/
+					   stringparser.class.php	
+					   stringparser_bbcode.class.php
+					   
+					lang/
+						lang.cs-cz.php
+						...	
+						lang.pt-br.php
+
+					panels/
+						  admin.plugin.panel.bbcode.php
+
+					res/
+					   bbcode.css
+					   editor.js
+					   toolbaricons/
+					   			   icons.txt	
+					   			   bold.png
+					   			   code.png
+					   			   del.png
+					   			   h1.png
+					   			   h2.png
+					   			   h3.png
+					   			   html.png
+					   			   italic.png
+					   			   link.png
+					   			   mail.png
+					   			   ol.png
+					   			   quote.png
+					   			   ul.png
+					   			   underlined.png
+
+					tpls/
+						admin.plugin.bbcode.tpl
+						toolbar.tpl
+						
+			  blockparser/
+						 plugin.blockparser.php
+						 lang/
+						 	 lang.cs-cz.php
+							 ...
+							 lang.pt-br.php	
+
+						 tpls/
+						 	 admin.plugin.blockparser.tpl
+
+			  calendar/
+					  plugin.calendar.php
+					  lang/
+					 	  lang.cs-cz.php
+						  ...
+						  lang.pt-br.php	
+	
+			  categories/
+						plugin.categories.php
+	
+						lang/
+							lang.cs-cz.php
+							...
+							lang.pt-br.php
+						tpls/
+							widget.tpl
+	
+			  commentcenter/
+						   plugin.commentcenter.php
+						   imgs/
+						   inc/
+						   lang/
+						   res/
+						   tpls/
+	
+			  favicon/
+					 plugin.favicon.php
+	
+					 imgs/
+						 favicon.ico
+	
+			  footnotes/
+					   plugin.footnotes.php
+					   how_to_use.txt
+	
+			  jquery/
+					plugin.jquery.php
+					res/
+					   jquery/
+							 3.5.1/
+								  jquery-3.5.1.min.js
+					   jqueryui/
+							   1.12.1/
+									 AUTHORS.txt
+									 LICENSE.txt
+									 package.json
+	
+									 index.html
+									 jquery-ui.min.css
+									 jquery-ui.min.js
+									 jquery-ui.structure.css
+									 jquery-ui.structure.min.css
+	
+			  lastcomments/
+						  plugin.lastcomments.php
+	
+						  lang/
+							  lang.cs-cz.php
+							  ...
+							  lang.pt-br.php
+	
+						  tpls/
+							  plugin.lastcomments-feed.tpl
+	
+			  lastcommentsadmin/
+							   plugin.lastcommentsadmin.php
+	
+							   lang/
+								   lang.cs-cz.php
+								   ...
+								   lang.pt-br.php
+
+							   tpls/
+								   admin.plugin.lastcommentsadmin.tpl
+			  lastentries/
+						 plugin.lastentries.php
+						 lang/
+							 lang.cs-cz.php
+							 ...
+							 lang.pt-br.php
+	
+			  lightbox2/
+					   plugin.lightbox2.php
+					   imgs/
+						   closelabel.gif
+						   loading.gif
+						   nextlabel.gif
+						   prevlabel.gif
+					   lang/
+						   lang.cs-cz.php
+						   ...
+						   lang.pt-br.php
+					   res/
+					      slimbox2.css
+					      slimbox2.js
+	
+			  mediamanager/
+						  plugin.mediamanager.php
+						  lang/
+						  	  lang.cs-cz.php
+							  ...
+							  lang.pt-br.php
+
+						  panels/
+						 	    panel.mediamanager.file.php
+
+						  res/
+						     folder.gif
+						     image2.gif
+						     style.css
+						     unknown.gif
+	
+						  tpls/
+							  admin.plugin.mediamanager.files.tpl
+	
+			  postviews/
+					   plugin.postviews.php
+	
+			  prettyurls/
+						plugin.prettyurls.php
+						htaccess.txt
+						htaccess-new
+	
+						lang/
+							lang.cs-cz.php
+							...
+							lang.pt-br.php
+						
+						tpls/
+							admin.plugin.prettyurls.tpl
+
+			  qspam/
+				   plugin.qspam.php
+				   lang/
+					   lang.cs-cz.php	
+					   ...
+					   lang.pt-br.php
+	
+				   tpls/
+					   admin.plugin.qspam.tpl
+	
+			  readmore/
+				  	  plugin.readmore.php
+					  lang/
+					      lang.cs-cz.php	
+					      ...
+					      lang.pt-br.php
+	
+			  searchbox/
+					   plugin.searchbox.php
+	
+			  thumb/
+				   plugin.thumb.php
+				   lang/
+					   lang.cs-cz.php	
+					   ...
+					   lang.pt-br.php
 	
 	setup/
-		  ...
+		 index.php
+		 main.php
+	
+		 imgs/
+			 loading.gif
+			 logo-small.gif
+			 shade.png
+			 tile.png
+
+		 lang/
+		     lang.cs-cz.php	
+		     ...
+		     lang.pt-br.php
+	
+		 lib/
+			main.lib.php
+			step1.lib.php
+			step2.lib.php
+	
+		 res/
+			setup.css
+	
+		 tpls/
+			 footer.tpl.php
+			 header.tpl.php
+			 locked.tpl.php
+			 step1.tpl.php
+			 step2.tpl.php
+			 step3.tpl.php
+
 </code>			
 				</div>				
 				
