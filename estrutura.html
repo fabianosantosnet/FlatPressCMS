@@ -72,7 +72,7 @@
 
 				<div class="sub">
 					<h3>Banco de dados</h3>
-					<p>Abaixo de forma resumida como é estruturado os arquivos de <em>fp-content</em>.</p>
+					<p>Abaixo de forma resumida como é estruturado os arquivos da pasta content dentro da <em>fp-content</em>.</p>
 <code><pre>
 [$content]
 	|
@@ -100,6 +100,30 @@
 				
 				<div class="sub">
 					<h3>Organização versão 1.2.1 default</h3>
+					
+					<p>De forma resumida:</p>
+<code class="minilight">
+	
+	admin/														&lt;-- Pasta com arquivos voltados ao painel de administração
+	
+	docs/														&lt;-- Algumas informações de documentação
+	
+	fp-content/													&lt;-- Contém informações do usuário, postagens, imagens dentre outros
+																    Ao término da instalação essa pasta fica vazia
+	
+	fp-defaults/												&lt;-- Guarda as informações de configuração padrão
+	
+	fp-includes/												&lt;-- Contém os arquivos do coração do CMS e o Smarty
+	
+	fp-interface/												&lt;-- Contém a camada de apresentação, temas e traduções
+	
+	fp-plugins/													&lt;-- Apresenta os plugins e arquivos de idiomas dos mesmos
+	
+	setup/														&lt;-- Pasta de instalação do FlatPress
+	
+</code><br>
+					
+			<p>De forma completa:</p>					
 <code class="minilight">	
    /															&lt;-- Diretório raiz. Arquivos PHP de inicialização do sistema.	
 	CHANGELOG.md
@@ -121,7 +145,7 @@
 	sitemap.php
 	static.php
 	
-	<span>admin/</span>
+	admin/
 	     admin-inline.tpl
 		 index.php
 		 main.php
@@ -218,6 +242,40 @@
 	
 	fp-content/
 			  delete.me
+			  %%setup.lock
+			  attachs/
+			  cache/
+			  config/
+					hashsalt.conf.php
+					plugins.conf.php
+					settings.conf.php
+					widgets.conf.php
+	
+			  content/											&lt;-- conteúdo
+					 drafts/
+						   entry220702-000622.txt
+	
+					 static/
+						   about.txt
+						   menu.txt
+
+					 22/										&lt;-- ano em 2 dígitos
+					    06/										&lt;-- mês em 2 dígitos
+						07/
+						  entry220701-194136.txt				&lt;-- arquivo com conteúdo da postagem no 
+																	formato 'entryANOmesDIA-hora.txt' ou 'entryYYMMDD-HHMMSS.txt'
+	
+			  images/
+					imguploaded.jpg
+	
+			  index/
+				   index-0.dat
+				   index.strings.dat
+	
+			  plugin_commentcenter/
+	
+			  users/
+				   idusuario.php								&lt;-- Onde idusuario é o nome de usuário que foi escolhido na instalação
 	
 	fp-defaults/
 			   plugins.conf.php
@@ -272,24 +330,24 @@
 	
 	fp-interface/
 				lang/
-				cs-cz/	
-				en-us/
-				...
-				pt-br/
-					 lang.admin.config.php
-					 lang.admin.entry.php
-					 lang.admin.main.php
-					 lang.admin.maintain.php
-					 lang.admin.php
-					 lang.admin.plugin.php
-					 lang.admin.static.php
-					 lang.admin.themes.php
-					 lang.admin.uploader.php
-					 lang.admin.widgets.php
-					 lang.comments.php
-					 lang.comments.php
-					 lang.contact.php
-					 lang.default.php
+					cs-cz/	
+					en-us/
+					...
+					pt-br/
+						 lang.admin.config.php
+						 lang.admin.entry.php
+						 lang.admin.main.php
+						 lang.admin.maintain.php
+						 lang.admin.php
+						 lang.admin.plugin.php
+						 lang.admin.static.php
+						 lang.admin.themes.php
+						 lang.admin.uploader.php
+						 lang.admin.widgets.php
+						 lang.comments.php
+						 lang.comments.php
+						 lang.contact.php
+						 lang.default.php
 	
 				sharedtpl/
 						 atom.tpl
