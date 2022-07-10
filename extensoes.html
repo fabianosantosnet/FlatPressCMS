@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+  	<meta http-equiv="x-ua-compatible" content="ie=edge">
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width,initial-scale=1">
+	  
+	<title>Extensões (plugins) | FlatPress CMS - Documentação em Língua Portuguesa</title>
+	  
+	<meta name="description" content="Informações sobre extensões (plugins) para o FlatPress CMS">
+	<meta name="author" content="Fabiano Santos - @fabianosantosnet">
+
+	<meta property="og:locale" content="pt, pt_BR, pt_PT">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Informações sobre extensões (plugins) para o FlatPress CMS">
+	<meta property="og:site_name" content="FlatPress CMS">
+	<meta property="og:description" content="Informações sobre extensões (plugins) para o FlatPress CMS">
+	<meta property="og:url" content="https://fabianosantosnet.github.io/FlatPressCMS/">
+	<meta property="og:image" content="https://fabianosantosnet.github.io/FlatPressCMS/assets/img/logo-flatpress-cms-fb.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@fabianosantos_n">
+	<meta name="twitter:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/img/logo-flatpress-cms-tw.png">
+
+	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+	<link rel="canonical" href="https://fabianosantosnet.github.io/FlatPressCMS/">
+	<link rel="stylesheet" href="assets/style.css">
+
+	<script src="assets/script.js" defer></script>
+	  
+  </head>
+  <body>
+	
+	<div id="container-base">  
+	  
+		<header id="top">		  
+		  <h1><a href="./index.html">Flat<span>Press</span> CMS</a></h1>
+		  <img src="./assets/logo-small.gif" alt="logotipo do FlatPress CMS" />
+		  <p>Seu ponto de partida sobre o FlatPress CMS no idioma português</p>
+		  <p class="view"><a href="https://github.com/fabianosantosnet/FlatPressCMS/">GitHub deste site</a></p>
+		</header>
+
+		<nav>  
+		  <ul>
+			<li><a href="./index.html" title="Página inicial">Início</a></li>
+			<li><a href="./instalacao.html" title="Requisitos, como instalar, atualizar">Instalação</a></li>
+			<li><a href="./historico.html" title="Visão Geral,  História e Linha do tempo">Histórico</a></li>
+			<li><a href="./estrutura.html" title="Organização das pastas, Tecnologia e banco de dados">Estrutura</a></li>			  
+			<li><a href="./temas.html" title="Informações sobre os temas">Temas</a></li>
+			<li class="active"><a href="./extensoes.html" title="Tudo sobre Plugins/Extensões">Extensões</a></li>
+			<li><a href="https://git.fabianosantos.net/doar" title="Doe para ajudar no projeto">Doar</a></li>
+		  </ul> 
+		</nav>
+
+		<main>
+			
+			<section class="data">
+				
+				<h2>Informações diversas sobre as extensões para o FlatPress CMS</h2>
+
+				<div class="sub">
+					<h3>Estrutura da pasta fp-plugins</h3>
+
+<code class="minilight">	
+
+	fp-plugins/																&lt;-- Contém os plugins do CMS
+			  delete.me
+
+			  accessibleantispam/
+								plugin.accessibleantispam.php
+								lang/
+									lang.cs-cz.php
+									...
+									lang.pt-br.php
+
+			  adminarea/
+					   plugin.adminarea.php					   
+					   lang/
+						   lang.cs-cz.php
+						   ...
+						   lang.pt-br.php
+
+			  akismet/
+					 plugin.akismet.php
+	
+					 inc/
+						Akismet.class.php
+	
+					 lang/
+						 lang.cs-cz.php
+						 ...
+						 lang.pt-br.php
+	
+					 tpls/
+						 admin.plugin.akismet.tpl
+	
+			  archives/
+					  plugin.archives.php
+					  lang/
+					      lang.cs-cz.php
+					      ...
+					      lang.pt-br.php
+	
+			  bbcode/
+					authors
+					ChangeLog
+					install
+					license
+					thanks
+
+					plugin.bbcode.php
+
+					inc/
+					   stringparser.class.php	
+					   stringparser_bbcode.class.php
+					   
+					lang/
+						lang.cs-cz.php
+						...	
+						lang.pt-br.php
+
+					panels/
+						  admin.plugin.panel.bbcode.php
+
+					res/
+					   bbcode.css
+					   editor.js
+					   toolbaricons/
+					   			   icons.txt	
+					   			   bold.png
+					   			   code.png
+					   			   del.png
+					   			   h1.png
+					   			   h2.png
+					   			   h3.png
+					   			   html.png
+					   			   italic.png
+					   			   link.png
+					   			   mail.png
+					   			   ol.png
+					   			   quote.png
+					   			   ul.png
+					   			   underlined.png
+
+					tpls/
+						admin.plugin.bbcode.tpl
+						toolbar.tpl
+						
+			  blockparser/
+						 plugin.blockparser.php
+						 lang/
+						 	 lang.cs-cz.php
+							 ...
+							 lang.pt-br.php	
+
+						 tpls/
+						 	 admin.plugin.blockparser.tpl
+
+			  calendar/
+					  plugin.calendar.php
+					  lang/
+					 	  lang.cs-cz.php
+						  ...
+						  lang.pt-br.php	
+	
+			  categories/
+						plugin.categories.php
+	
+						lang/
+							lang.cs-cz.php
+							...
+							lang.pt-br.php
+						tpls/
+							widget.tpl
+	
+			  commentcenter/
+						   plugin.commentcenter.php
+						   imgs/
+						   inc/
+						   lang/
+						   res/
+						   tpls/
+	
+			  favicon/
+					 plugin.favicon.php
+	
+					 imgs/
+						 favicon.ico
+	
+			  footnotes/
+					   plugin.footnotes.php
+					   how_to_use.txt
+	
+			  jquery/
+					plugin.jquery.php
+					res/
+					   jquery/
+							 3.5.1/
+								  jquery-3.5.1.min.js
+					   jqueryui/
+							   1.12.1/
+									 AUTHORS.txt
+									 LICENSE.txt
+									 package.json
+	
+									 index.html
+									 jquery-ui.min.css
+									 jquery-ui.min.js
+									 jquery-ui.structure.css
+									 jquery-ui.structure.min.css
+	
+			  lastcomments/
+						  plugin.lastcomments.php
+	
+						  lang/
+							  lang.cs-cz.php
+							  ...
+							  lang.pt-br.php
+	
+						  tpls/
+							  plugin.lastcomments-feed.tpl
+	
+			  lastcommentsadmin/
+							   plugin.lastcommentsadmin.php
+	
+							   lang/
+								   lang.cs-cz.php
+								   ...
+								   lang.pt-br.php
+
+							   tpls/
+								   admin.plugin.lastcommentsadmin.tpl
+			  lastentries/
+						 plugin.lastentries.php
+						 lang/
+							 lang.cs-cz.php
+							 ...
+							 lang.pt-br.php
+	
+			  lightbox2/
+					   plugin.lightbox2.php
+					   imgs/
+						   closelabel.gif
+						   loading.gif
+						   nextlabel.gif
+						   prevlabel.gif
+					   lang/
+						   lang.cs-cz.php
+						   ...
+						   lang.pt-br.php
+					   res/
+					      slimbox2.css
+					      slimbox2.js
+	
+			  mediamanager/
+						  plugin.mediamanager.php
+						  lang/
+						  	  lang.cs-cz.php
+							  ...
+							  lang.pt-br.php
+
+						  panels/
+						 	    panel.mediamanager.file.php
+
+						  res/
+						     folder.gif
+						     image2.gif
+						     style.css
+						     unknown.gif
+	
+						  tpls/
+							  admin.plugin.mediamanager.files.tpl
+	
+			  postviews/
+					   plugin.postviews.php
+	
+			  prettyurls/
+						plugin.prettyurls.php
+						htaccess.txt
+						htaccess-new
+	
+						lang/
+							lang.cs-cz.php
+							...
+							lang.pt-br.php
+						
+						tpls/
+							admin.plugin.prettyurls.tpl
+
+			  qspam/
+				   plugin.qspam.php
+				   lang/
+					   lang.cs-cz.php	
+					   ...
+					   lang.pt-br.php
+	
+				   tpls/
+					   admin.plugin.qspam.tpl
+	
+			  readmore/
+				  	  plugin.readmore.php
+					  lang/
+					      lang.cs-cz.php	
+					      ...
+					      lang.pt-br.php
+	
+			  searchbox/
+					   plugin.searchbox.php
+	
+			  thumb/
+				   plugin.thumb.php
+				   lang/
+					   lang.cs-cz.php	
+					   ...
+					   lang.pt-br.php
+	
+</code>			
+				</div>				
+				
+			</section>
+
+		</main>
+
+		<footer id="bottom-copy">
+		  <p>Projeto mantido por <a href="https://github.com/fabianosantosnet">fabianosantosnet</a></p>
+		</footer>
+		
+	</div>
+		 
+  </body>
+</html>
