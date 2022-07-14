@@ -157,6 +157,16 @@ section.data .sub h3
   border-bottom:0.1rem solid var(--color3);
   line-height:160%
 }
+
+section.data .sub2 h4
+{
+  color:var(--base-color);    
+  border-bottom:0.1rem solid var(--color3);
+  line-height:160%;
+  padding:0.5rem 0;
+  margin-left:1rem
+}
+
 section.data .sub
 {
   padding:0.5rem;  
@@ -184,9 +194,14 @@ main pre {overflow:scroll;scroll-behavior:smooth}
   color:#fff
 }
 
-#bottom-copy a
+#bottom-copy a,#bottom-copy a:hover
 {
   color:#ff0
+}
+
+#bottom-copy a:hover
+{
+  font-weight:bold
 }
 
 @media(min-width:1024px)

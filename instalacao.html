@@ -16,15 +16,14 @@
 	<meta property="og:site_name" content="FlatPress CMS">
 	<meta property="og:description" content="Como instalar o FlatPress CMS">
 	<meta property="og:url" content="https://fabianosantosnet.github.io/FlatPressCMS/">
-	<meta property="og:image" content="https://fabianosantosnet.github.io/FlatPressCMS/assets/img/logo-flatpress-cms-fb.png">
+	<meta property="og:image" content="https://fabianosantosnet.github.io/FlatPressCMS/assets/logo-flatpress-cms-fb.png">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
 
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:creator" content="@fabianosantos_n">
-	<meta name="twitter:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/img/logo-flatpress-cms-tw.png">
+	<meta name="twitter:card" content="summary_large_image">	
+	<meta name="twitter:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/logo-flatpress-cms-tw.png">
 
-	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="assets/favicon.png">
 	<link rel="canonical" href="https://fabianosantosnet.github.io/FlatPressCMS/">
 	<link rel="stylesheet" href="assets/style.css">
 
@@ -58,56 +57,63 @@
 
 			<section class="data">				
 				
-				<h2>Requisitos Mínimos</h2>
+				<h2>Instalação e atualização do FlatPress CMS</h2>
 				
-				<p>O FlatPress 1.2.1 funcionará em qualquer servidor web que suporte PHP de 5.6 a 8.0. No momento, o PHP 8.1 ainda não é suportado.</p>
-				<p>Para melhores resultados (mas não obrigatórios), o servidor web também deve ter um mecanismo de reescrita (como <a href="https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html">mod_rewrite</a>) habilitado; 
-					isso é necessário pelo plugin PrettyURLs para criar URLs amgáveis. Além disso, o <a href="https://www.php.net/manual/en/book.image.php">GDlib</a> deve ser instalado para a criação de miniaturas de imagens.</p>
+				<div class="sub sub2">
 				
-				<p>Para Windows, você pode utilizar pacotes prontos como o <a href="https://wnmp.x64architecture.com/">WNMP (com servidor NGINX)</a> ou <a href="https://www.vswamp.com/">VertrigoServ (com Apache)</a>.</p>
-				
-				<p>No Ubuntu, a instalação seria algo como:
-				   <code>
-					   <pre>
-  sudo apt-get update
-  sudo apt-get install apache2 php libapache2-mod-php php-gd 				
-				      </pre>
-				</code>
-			   </p>
-				
-			</section>
-			
-			<section class="data">
-				
-				<h2>Como Instalar</h2>
-				
-				<p>Tem dois tipos de pacotes para download:</p>
-				
-				<ul>
-					<li>Interface padrão: <a href="https://github.com/flatpressblog/flatpress/archive/1.2.1.zip">v1.2.1 "Legato"</a> (versão <a href="https://www.softaculous.com/demos/FlatPress">demo</a>)</li>
-					<li>Novo painel de administração (em teste): <a href="https://github.com/flatpressblog/flatpress/archive/refs/heads/responsiveadmin.zip">Response Admin</a></li>
-				</ul>
-							
-				<p>Após baixar, vá no painel de controle de sua hospedagem, abra o gerenciador de arquivos, navegue até a pasta desejada (normalmente é a <em>public_html</em>), selecione a opção de upload, escolha o arquivo zip, após carregar descompacte-o.</p>
-				<p>Inicie a configuração do FlatPress navegando até o endereço de seu site <em>https://seusite.com.br</em> ou <em>https://seusite.com.br/blog</em>, caso tenha desempactado dentro da pasta blog.</p>
-				<p>Na página de instalação digite o nome de usuário, senha, URL e endereço de e-mail, depois conclua a instalação.</p>
-				<p>Por fim remova a pasta "Setup" e o arquivo "setup.php".</p>
-				
-				<div class="sub">
-					<h3>Links</h3>
+					<h3>Requisitos Mínimos</h3>
+																																	  <!-- https://www.php.net/supported-versions.php -->
+					<p>O FlatPress 1.2.1 funcionará em qualquer servidor web que suporte PHP de 5.6 a 8.0. Por questões de segurança, recomenda-se o PHP 7.4 ou 8.0. No momento, o PHP 8.1 ainda não é suportado.</p>
 
-					<p>A instalação pode ser realizada pelo script do <a href="https://ideon.net.br/instalacao-flatpress-blog/">SoftAculous</a></p>
-					<p><a href="https://www.vultr.com/docs/install-flatpress-cms-on-ubuntu-20-04-lts/">Instale no Ubuntu LTS 20.04</a> <em>(inglês)</em> ou em outros sistemas <a href="https://www.linuxhelp.com/articles/flatpress">linux</a> (inglês)</p>
+					<p>O CMS utiliza muito pouco espaço, na versão 1.2.1 o arquivo compactado tem apenas 1.2 MB e descompactado 2.7 MB, portanto uma hospedagem compartilhada com 1 GB de espaço é mais que suficiente para um site/blog com quase 1000 páginas de 1 MB cada.</p>
+					
+					<p>Para melhores resultados (mas não obrigatórios), o servidor web também deve ter um mecanismo de reescrita (como <a href="https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html">mod_rewrite</a>) habilitado; 
+						isso é necessário pelo plugin PrettyURLs para criar URLs amigáveis. Além disso, o <a href="https://www.php.net/manual/en/book.image.php">GDlib</a> deve ser instalado para a criação de miniaturas de imagens.</p>
+
+					<p>Para Windows, você pode utilizar pacotes prontos como o <a href="https://wnmp.x64architecture.com/">WNMP (com servidor NGINX)</a> ou <a href="https://www.vswamp.com/">VertrigoServ (com Apache)</a>.</p>
+
+					<p>No Ubuntu, a instalação seria algo como:
+					   <code>
+						   <pre>
+	  sudo apt-get update
+	  sudo apt-get install apache2 php libapache2-mod-php php-gd 				
+						  </pre>
+					</code>
+				   </p>
+					
 				</div>
 				
-			</section>
+				<div class="sub sub2">
 
-			<section class="data">
+					<h3>Como Instalar</h3>
+
+					<p>Tem dois tipos de pacotes para download:</p>
+
+					<ul>
+						<li>Interface padrão: <a href="https://github.com/flatpressblog/flatpress/archive/1.2.1.zip">v1.2.1 "Legato"</a> (versão <a href="https://www.softaculous.com/demos/FlatPress">demo</a>)</li>
+						<li>Novo painel de administração (em teste): <a href="https://github.com/flatpressblog/flatpress/archive/refs/heads/responsiveadmin.zip">Response Admin</a></li>
+					</ul>
+
+					<p>Após baixar, vá no painel de controle de sua hospedagem, abra o gerenciador de arquivos, navegue até a pasta desejada (normalmente é a <em>public_html</em>), selecione a opção de upload, escolha o arquivo zip, após carregar descompacte-o.</p>
+					<p>Inicie a configuração do FlatPress navegando até o endereço de seu site <em>https://seusite.com.br</em> ou <em>https://seusite.com.br/blog</em>, caso tenha desempactado dentro da pasta blog.</p>
+					<p>Na página de instalação digite o nome de usuário, senha, URL e endereço de e-mail, depois conclua a instalação.</p>
+					<p>Por fim remova a pasta "Setup" e o arquivo "setup.php".</p>
+
+					<div class="sub3">
+						<h4>Links</h4>
+
+						<p>A instalação pode ser realizada pelo script do <a href="https://ideon.net.br/instalacao-flatpress-blog/">SoftAculous</a></p>
+						<p><a href="https://www.vultr.com/docs/install-flatpress-cms-on-ubuntu-20-04-lts/">Instale no Ubuntu LTS 20.04</a> <em>(inglês)</em> ou em outros sistemas <a href="https://www.linuxhelp.com/articles/flatpress">linux</a> (inglês)</p>
+					</div>
+			 </div><br>	
+
+			<div class="sub sub2">
 				
-				<h2>Atualização do FlatPress</h2>				
+				<h3>Atualização do FlatPress</h3>				
 				<p>Antes de alterar qualquer coisa em sua instância do FlatPress, sempre faça um backup de toda a pasta, caso algo dê errado volte o backup.</p>
-
-			</section>
+			</div>
+				
+		  </section>
 			
 		</main>
 

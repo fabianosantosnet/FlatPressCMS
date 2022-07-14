@@ -16,15 +16,14 @@
 	<meta property="og:site_name" content="FlatPress CMS">
 	<meta property="og:description" content="Estrutura do FlatPress CMS">
 	<meta property="og:url" content="https://fabianosantosnet.github.io/FlatPressCMS/">
-	<meta property="og:image" content="https://fabianosantosnet.github.io/FlatPressCMS/assets/img/logo-flatpress-cms-fb.png">
+	<meta property="og:image" content="https://fabianosantosnet.github.io/FlatPressCMS/assets/logo-flatpress-cms-fb.png">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
 
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:creator" content="@fabianosantos_n">
-	<meta name="twitter:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/img/logo-flatpress-cms-tw.png">
+	<meta name="twitter:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/logo-flatpress-cms-tw.png">
 
-	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="assets/favicon.png">
 	<link rel="canonical" href="https://fabianosantosnet.github.io/FlatPressCMS/">
 	<link rel="stylesheet" href="assets/style.css">
 
@@ -60,7 +59,8 @@
 				
 				<h2>Estrutura do FlatPress CMS</h2>
 				
-				<div class="sub">
+				<div class="sub sub2">
+					
 					<h3>Tecnologias</h3>
 					<p>Basicamente as tecnologias utilizadas no CMS são: arquivos HTML, CSS, JavaScript e PHP.</p>
 					<p>Para o conteúdo é utilizado o <a href="sceditor.com">SCEditor</a></p>
@@ -70,37 +70,38 @@
 					   <a href="https://photoswipe.com/" rel="nofollow">PhotoSwipe</a>.</p>
 					
 					<p>Arquivos suportados para upload jpg, jpeg, gif e png</p>
-				</div>
+					
+				</div><br>
 
-				<div class="sub">
+				<div class="sub sub2">
 					<h3>Banco de dados</h3>
 					<p>Abaixo de forma resumida como é estruturado os arquivos da pasta content dentro da <em>fp-content</em>.</p>
 <code><pre>
-[$content]
-	|
-	|-- [$year] // 2 dígitos para o ID do ano (05 para 2005)
-	|       |
-	|       |-- [$month]  //dois dígitos para o ID do mês (01 para Janeiro)
-	|               |
-	|               |-- entryYYMMDD-HHMMSS.txt
-	|               |-- [entryYYMMDD-HHMMSS]
-	|	            |
-	|			    |-- rating.txt
-	|			    |-- view_counter.txt
-	|			    |-- [comments]
-	|			             |
-	|				     	 |-- commentYYMMDD-HHMMSS.txt
-	|
-	|-- [static]
-			|
-			|-- $filename.txt
+	[$content]
+		|
+		|-- [$year] // 2 dígitos para o ID do ano (05 para 2005)
+		|       |
+		|       |-- [$month]  //dois dígitos para o ID do mês (01 para Janeiro)
+		|               |
+		|               |-- entryYYMMDD-HHMMSS.txt
+		|               |-- [entryYYMMDD-HHMMSS]
+		|	            |
+		|			    |-- rating.txt
+		|			    |-- view_counter.txt
+		|			    |-- [comments]
+		|			             |
+		|				     	 |-- commentYYMMDD-HHMMSS.txt
+		|
+		|-- [static]
+				|
+				|-- $filename.txt
 </pre></code>			
 
-	 <p>A entrada <b>entryYYMMDD-HHMMSS.txt</b> deve ser única e, portanto, pode ser considerado como o campo ID de uma tabela em um banco de dados.</p>
+	 <p>A entrada <b>entryYYMMDD-HHMMSS.txt</b> deve ser única e, portanto, pode ser considerado como o campo ID de uma tabela em um banco de dados.</p><br>
 
 				</div>		
 				
-				<div class="sub">
+				<div class="sub sub2">
 					<h3>Organização versão 1.2.1 default</h3>
 					
 					<p>De forma resumida:</p>
