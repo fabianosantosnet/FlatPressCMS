@@ -77,29 +77,61 @@
 					<h3>Banco de dados</h3>
 					<p>Abaixo de forma resumida como é estruturado os arquivos da pasta content dentro da <em>fp-content</em>.</p>
 <code><pre>
-	[$content]
+	[content]
 		|
-		|-- [$year] // 2 dígitos para o ID do ano (05 para 2005)
+		|-- [$year] 								&lt;- 2 dígitos para o ID do ano ('05' para 2005)
 		|       |
-		|       |-- [$month]  //dois dígitos para o ID do mês (01 para Janeiro)
-		|               |
+		|       |-- [$month]  						&lt;- dois dígitos para o ID do mês ('01' para Janeiro)
+		|               |					    
 		|               |-- entryYYMMDD-HHMMSS.txt
 		|               |-- [entryYYMMDD-HHMMSS]
-		|	            |
-		|			    |-- rating.txt
-		|			    |-- view_counter.txt
-		|			    |-- [comments]
-		|			             |
-		|				     	 |-- commentYYMMDD-HHMMSS.txt
+		|	                		|
+		|							|-- rating.txt		
+		|			        		|-- view_counter.txt
+		|			        		|-- [comments]
+		|			                		|
+		|				     	    		|-- commentYYMMDD-HHMMSS.txt
 		|
 		|-- [static]
 				|
 				|-- $filename.txt
 </pre></code>			
 
-	 <p>A entrada <b>entryYYMMDD-HHMMSS.txt</b> deve ser única e, portanto, pode ser considerado como o campo ID de uma tabela em um banco de dados.</p><br>
+					 <p>A entrada <b>entryYYMMDD-HHMMSS.txt</b> deve ser única e, portanto, pode ser considerado como o campo ID de uma tabela em um banco de dados.</p>
 
-				</div>		
+					<p>Para postagem comum, rascunho e página estática o formato padrão de conteúdo do arquivo entry***.txt é separado por uma palavra chave e pelo caractere PIPE '|'. Ao salvar ou pré-visualizar o '|' será convertido para '&#124;'. 
+						A posição de um campo dentro de um arquivo não importa. O exemplo abaixo é da página estática About.</p>
+
+					<p><code class="p">SUBJECT|About|CONTENT|Write something about yourself here. ([url=admin.php?p=static&amp;action=write&amp;page=about]Edit me![/url])|DATE|1650311388|VERSION|fp-1.2.1|</code></p>
+
+					<ul>
+						<li><span class="d">SUBJECT|About|</span> - A chave SUBJECT informa após o '|' o título dessa página, nesse caso 'About' <br>
+																   <small><strong>Esta é a única chave obrigatória, as demais abaixo são opcionais</strong></small></li>
+
+						<li><span class="d">CONTENT|Write ...|</span> - Refere-se ao conteúdo até encontrar outro '|'</li>
+						<li><span class="d">DATE|1650311388|</span> - Data de publicação no formato unix <a href="https://unixtime.org/">timestamp</a> <br>
+																	  <small>Este campo não será atualizado quando você editar uma página</small></li>
+
+						<li><span class="d">VERSION|fp-1.2.1|</span> - Informa a versão do CMS</li>
+					</ul>			
+
+					<p>Podemos também ter os campos abaixo:</p> 				
+					<ul>					
+						<li><span class="d">AUTHOR|NomeDoAutor|</span> - Quem foi o autor que publicou essa página</li>
+						<li><span class="d">CATEGORIES|draft,commslock,1,5|</span> - Número de identificação da categoria à qual uma página pertence, rascunho ou quando os comentários são permitidos. Os valores múltiplos são separados por vírgula.
+				Para esse exemplo significa que essa página é um rascunho 'draft', os comentários estão bloqueados 'commslock' e é arquivado nas categorias 1 e 5.</li>
+					</ul>			
+
+					<p>No que tange a comentários "comment***.txt", além dos campos CONTENT, DATE e VERSION são adicionais:</p>
+
+					<ul>					
+						<li><span class="d">NAME|Nome|</span> - O nome de quem comentou</li>
+						<li><span class="d">EMAIL|visitante@seusite.com.br|</span> - Seu endereço de e-mail (se fornecido)</li>
+						<li><span class="d">URL|https://sitevisitante.com.br|</span> - Seu endereço da web (se fornecido)</li>						
+						<li><span class="d">IP-ADDRESS|194.117.254.64|</span> - O endereço IP de quem comentou</li>
+					</ul>	
+					
+				</div><br>		
 				
 				<div class="sub sub2">
 					<h3>Organização versão 1.2.1 default</h3>

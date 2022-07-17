@@ -186,6 +186,9 @@ main ul {padding:0 1rem}
 main ul li {list-style-type:disclosure-closed;line-height:200%;padding-left:0.3rem}
 main pre {overflow:scroll;scroll-behavior:smooth}
 
+code.p {padding:1rem;margin:1rem;background-color:var(--bg-color);display:block;line-height:200%}
+span.d {background-color:var(--bg-color);display:inline-block;line-height:200%;padding:0.5rem}
+
 #bottom-copy
 {
   background-color:var(--base-color);
