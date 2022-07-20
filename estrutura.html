@@ -93,8 +93,15 @@
 		|				     	    		|-- commentYYMMDD-HHMMSS.txt
 		|
 		|-- [static]
-				|
-				|-- $filename.txt
+		|		|
+		|		|-- namepage.txt
+		|
+		|-- [draft]
+		|		|
+		|		|-- entryYYMMDD-HHMMSS.txt
+		|
+		|-- categories.txt		
+		|-- categories_enconded.dat
 </pre></code>			
 
 					 <p>A entrada <b>entryYYMMDD-HHMMSS.txt</b> deve ser única e, portanto, pode ser considerado como o campo ID de uma tabela em um banco de dados.</p>
@@ -277,7 +284,11 @@
 	
 	fp-content/
 			  delete.me
-			  %%setup.lock
+			  %%setup.lock										&lt;-- Evita nova instalação
+																	caso tenha perdido a senha, delete esse arquivo,
+																	faça backup da pasta 'fp-content/config/', execute o setup.php
+																	e recrie a conta do mesmo modo anterior, após isso restaure 
+																	a pasta 'fp-content/config/' novamente
 			  attachs/
 			  cache/
 			  config/
@@ -287,6 +298,10 @@
 					widgets.conf.php
 	
 			  content/											&lt;-- conteúdo
+					 
+					 categories.txt
+					 categories_encoded.dat
+					 
 					 drafts/
 						   entry220702-000622.txt
 	
@@ -299,7 +314,7 @@
 						07/
 						  entry220701-194136.txt				&lt;-- arquivo com conteúdo da postagem no 
 																	formato 'entryANOmesDIA-hora.txt' ou 'entryYYMMDD-HHMMSS.txt'
-	
+
 			  images/
 					imguploaded.jpg
 	
