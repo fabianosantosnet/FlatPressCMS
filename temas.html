@@ -249,6 +249,40 @@
 </code>			
 				</div>				
 				
+				<div class="sub sub2">
+					<h3>Informações de desenvolvimento</h3>
+					
+					<h4>Constantes</h4>
+					<ul>
+						<li>{$flatpress.title} - Título do Blog</li>
+						<li>{$flatpress.subtitle} - Legenda do blog</li>
+						<li>{$flatpress.footer} - O texto mostrado na parte inferior da página)</li>
+						<li>{$flatpress.www} - A URL do Blog especificada na Área de Administração</li>
+						<li>{$flatpress.autor} - Nome do autor</li>
+						<li>{$flatpress.email} - Endereço de e-mail</li>
+						<li>{$flatpress.maxentries} - Número máximo de entradas mostradas por página </li>
+						<li>{$fp_config.locale.dateformat} - Formato da data</li>
+						<li>{$fp_config.locale.timeformat} - Formato da hora </li>
+						<li>{$flatpress.version} - Versão do CMS</li>
+						<li>{$flatpress.charset} - Informa o conjunto de caracteres</li>
+						<li>{$smarty.const.BLOG_BASEURL} - Informa a URL base, por exemplo, para a instalação na pasta flatpress retornará <em>https://www.site.com/flatpress/</em></li>
+						<li>{$flatpress.themeurl} - Retorna a URL do tema que está ativa (por exemplo: /fp-interface/themes/leggero/)</li>
+						<li>{$subject} - Título da postagem</li>
+						<li>{$pagetitle} - Contém o título da página que está sendo visualizada</li>
+						<li>{$panelstrings.descr} - Descrição do Painel, dentro da Área de Administração</li>
+						<li>{$panelstrings.head} - O título do Painel, dentro da Área de Administração</li>						
+					</ul>			
+					
+					<p>Usando as variáveis abaixo é possível entrar/referenciar um diretório Plugin: PLUGINS_DIR/plugin.PLUGINNAME/PLUGINFILE</p>
+					<ul>
+						<li>PLUGINS_DIR - O diretório onde os Plugins estão armazenados </li>
+						<li>PLUGINNAME - Nome do Plugin</li>
+					</ul>		
+					
+					<p>Outras variáveis podem ser encontradas em <code>\admin\panels\entry\admin.entry.commentlist.tpl</code></p>
+					
+				</div>
+				
 			</section>
 
 		</main>
