@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+  	<meta http-equiv="x-ua-compatible" content="ie=edge">
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width,initial-scale=1">
+	  
+	<title>Informações Técnicas &amp; Diversas | FlatPress CMS - Documentação em Língua Portuguesa</title>
+	  
+	<meta name="description" content="Informações Técnicas e Diversas sobre o FlatPress CMS">
+	<meta name="author" content="Fabiano Santos - @fabianosantosnet">
+
+	<meta property="og:locale" content="pt, pt_BR, pt_PT">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Informações Técnicas e Diversas sobre o FlatPress CMS">
+	<meta property="og:site_name" content="FlatPress CMS">
+	<meta property="og:description" content="Informações Técnicas e Diversas sobre o FlatPress CMS">
+	<meta property="og:url" content="https://fabianosantosnet.github.io/FlatPressCMS/">
+	<meta property="og:image" content="https://fabianosantosnet.github.io/FlatPressCMS/assets/logo-flatpress-cms-fb.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<meta name="twitter:card" content="summary_large_image">	
+	<meta name="twitter:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/logo-flatpress-cms-tw.png">
+
+	<link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+	<link rel="canonical" href="https://fabianosantosnet.github.io/FlatPressCMS/">
+	<link rel="stylesheet" href="assets/style.css">
+
+	<script src="assets/script.js" defer></script>
+	  
+  </head>
+  <body>
+	
+	<div id="container-base">  
+	  
+		<header id="top">		  
+		  <h1><a href="./index.html">Flat<span>Press</span> CMS</a></h1>
+		  <img src="./assets/logo-small.gif" alt="logotipo do FlatPress CMS" />
+		  <p>Seu ponto de partida sobre o FlatPress CMS no idioma português</p>
+		  <p class="view"><a href="https://github.com/fabianosantosnet/FlatPressCMS/">GitHub deste site</a></p>
+		</header>
+
+		<nav>  
+		  <ul>
+			<li><a href="./index.html" title="Página inicial">Início</a></li>
+			<li><a href="./instalacao.html" title="Requisitos, como instalar, atualizar">Instalação</a></li>
+			<li><a href="./historico.html" title="Visão Geral,  História e Linha do tempo">Histórico</a></li>
+			<li><a href="./estrutura.html" title="Organização das pastas, Tecnologia e banco de dados">Estrutura</a></li>			  
+			<li><a href="./temas.html" title="Informações sobre os temas">Temas</a></li>
+			<li><a href="./extensoes.html" title="Tudo sobre Plugins/Extensões">Extensões</a></li>
+			<li class="active"><a href="./informacoes-tecnicas.html" title="Informações técnicas e diversas">Diversos</a></li>
+			<li><a href="https://git.fabianosantos.net/doar" title="Doe para ajudar no projeto">Doar</a></li>
+		  </ul> 
+		</nav>
+
+		<main>
+
+			<section class="data">				
+				
+				<h2>Informações técnicas e diversas</h2>
+				
+				<p>Nessa parte você terá várias informações sobre o FlatPress CMS.</p>
+				
+				<div class="sub sub2">
+				
+					<h3 id="forgotpwd">Esqueci a senha e agora ?</h3>
+					
+					<p>Exclua o arquivo <code>%%setup.lock</code> de dentro da pasta <code>fp-content/</code>, faça backup de seu <code>fp-content/config/</code> se você personalizou muito o FlatPress e reinicie a configuração (aponte para index.php ou setup.php); 
+						uma vez solicitado, crie um usuário com o mesmo nome de usuário do antigo e ele será substituído. Restaure seu backup de configuração/diretório uma vez feito.</p>
+				</div>
+
+				<div class="sub sub2 link">
+				
+					<h3 id="aboutbbcode">BBCode e Elementos Disponíveis</h3>
+					<p>BBCode é uma linguagem de marcação simples de entender que permite que você mantenha seu blog sem saber sobre HTML. 
+						Para uma visão geral, veja <a href="https://www.bbcode.org/">bbcode.org (en)</a>.</p>
+					
+					<p>Foi implementada no FlatPress utilizando a classe PHP <a href="http://christian-seiler.de/projekte/php/bbcode/index_en.html">StringParser_BBCode de Christian Seiler</a>.</p>
+					
+					 <details open>
+  						<summary>Elementos de conteúdo</summary>  						
+						 
+						 <details>
+							 <summary>Cabeçalho</summary>
+							 <p> [h2] Título 2º nível [/h2]<br>
+								 [h3] Título 3º nível [/h3]<br>
+								 [h4] Título 4º nível [/h4]<br>
+								 [h5] Título 5º nível [/h5]<br>							 
+								 [h6] Título 6º nível [/h6]<br><br>
+								 <small>Obs: Como h1 é o título do título da página, ele foi desativado</small>
+							 </p>
+						 </details>
+						 
+						 <details>
+							 <summary>Formatação de texto</summary>
+							 <p> [b] negrito [/b] <br>
+								 [i] itálico [/i] <br>
+								 [u] sublinhado [/u] <br>
+								 [del] tachado [/del] <br><br>
+								 
+<!--							 [font=FONTE] fonte [/font]<br> <=== not working need other plugin
+								 <small>Insira um nome de uma 'FONTE' ou família 'sans-serif'</small><br><br> -->
+								 
+								 [size=80%] menor [/size]<br>
+								 [size=120%] maior [/size]<br><br>
+								 
+								 [color=COR]color[/color]<br>
+								 <small>Insira o nome de uma 'COR' em inglês ou em código Hexadecimal</small><br><br>
+								 
+								 [size=200%][color=red][b] Veja aqui ! [/b][/color][/size]
+							 </p>
+						 </details>
+						 
+						 <details>
+							 <summary>Imagem</summary>
+							 
+							 <p>[img=IMAGEPATH (alt=alternate text) (title=title text) (popup=false|true) (scale=NN%) (width=N) (height=N) (float=left|right) (loading=lazy|eager)]<br>
+								 <small>Os parâmetros entre parêntesis são opcionais)</small></p>
+								 
+							 <ul class="disc">
+								 <li>Se 'IMAGEPATH' começar com 'images/' será automaticamente substituida por '/fp-content/images/'</li>
+								 <li>'alt' define o texto alternativo</li>
+								 
+								 <li>'title' é o título mostrado ao passar o mouse em cima</li>
+								 <li>'float' flutua as imagens para a esquerda (left) ou para a direita (right) <code>[img=images/imagem.png float="right"]</code></li>
+								 
+								 <li>Se 'popup' for definido como 'true' e o plugin LightBox2 estiver ativado ao clicar na imagem o popup será aberto</li>
+								 
+								 <li>'scale' cria uma miniatura 'NN%' menor que a original.<br><br>
+									 Exemplo: [img=images/picture.jpg scale=5%]<br>
+									 <small>Funciona apenas para imagem local. Ao usar esse atributo, 'popup=true' será atribuido automaticamente.</small></li>
+									 
+								 <li>'width' e 'height' definem a largura ou altura da imagem em pixels <code>[img=images/imagem.png width="20px" height="30px"]</code><br>
+									 <small>Será gerado uma imagem menor se o plugin 'Thumb' estiver ativo e 'popup=true' será atibuido para abrir a imagem original</small>
+								</li>
+									 
+								 <li>'loading' define o método de carregamento 'lazy' (melhor desempenho)</li>
+							</ul>
+								 
+							<p>[img="caminhoDaImagem/arquivo.jpg" alt="Texto alternativo" title="Título da imagem" popup="true" width="200px" height="200px" float="right" loading="eager"]</p>
+								 
+						 </details>
+							 
+						 <details>
+							 <summary>Listas</summary>
+							 <p>
+								 [list]<br>
+			&nbsp;&nbsp;&nbsp;&nbsp; [*] lista não ordenada<br>
+			&nbsp;&nbsp;&nbsp;&nbsp; [*] lista não ordenada<br>
+								[/list] 
+							 </p>
+								
+							 <p>
+								 [list=#]<br>
+			&nbsp;&nbsp;&nbsp;&nbsp; [*] lista ordenada 1<br>
+			&nbsp;&nbsp;&nbsp;&nbsp; [*] lista ordenada 2<br>
+								[/list] 
+							 </p>							 
+						 </details>
+				
+						 <details>
+							 <summary>Outros</summary>
+							 <p> [quote] texto de citação [/quote]<br>
+								 [code] código [/code]</p>
+							 <p>[url] https://www.page.com [/url]<br>
+								[url=http://www.mypage.com] texto do link [/url]
+							 </p>
+							
+							 <p>
+								 [mail] user@example.org [/mail]<br>
+								 [mail=user@example.org] descricão do link de email [/mail] 
+							 </p> 
+								 
+							 <p>[html] HTML aqui [/html]<br>
+								<small>conteúdo apresentado como HTML na página web, porém após salvar essas tags irão aparecer como entidades HTML, o ideal é ir em Plugins-&gt;BBCode e "Ativar o uso de HTML junto com o BBCode"</small></p>
+							 
+							<p>[video=URL] permite inserir um vídeo do YouTube, Vimeo ou Facebook em sua entrada<br>
+								<small>por exemplo [video=https://www.youtube.com/watch?v=h_GTIqFwvLo]</small></p>
+						 </details>
+						 
+					</details><br>
+					
+					<details>
+						<summary>BBCode de outros plugins</summary>
+						<p>[more] (do plugin <a href="https://wiki.flatpress.org/doc:plugins:standard#readmore">Read More</a>) - quebra o texto ao localizar esse bbcode e insere na página principal o link "Leia mais…" que pode ser clicado para ver o resto da postagem</p>
+						<p>[entryurl=ENTRY-ID] Texto [/entryurl] e [iurl=PAGE] Link [/iurl] ( do plugin <a href="https://wiki.flatpress.org/res:plugins:internalurls">Internal URLs</a>): Esses elementos criam links para páginas ou entradas estáticas</p>
+						
+					 </details>
+				</div>
+<!--				
+				<div class="sub sub2">
+				
+					<h3 id="">Como fazer backup do meu blog FlatPress ?</h3>
+					<p></p>
+					<p></p>
+					
+				</div>
+				
+				<div class="sub sub2">
+				
+					<h3>Como lidar com comentários de spam ?</h3>
+					<p></p>
+					<p></p>
+					
+				</div>
+-->				<br><br>
+		  </section>
+			
+		</main>
+
+		<footer id="bottom-copy">
+		  <p>Projeto mantido por <a href="https://github.com/fabianosantosnet">fabianosantosnet</a></p>
+		</footer>
+		
+	</div>
+		 
+  </body>
+</html>

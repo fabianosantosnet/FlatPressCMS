@@ -167,6 +167,9 @@ section.data .sub2 h4
   margin-left:1rem
 }
 
+section.data .sub2 details {margin-left:1rem}
+section.data .sub2 details details summary {margin-top:0.5rem}
+
 section.data .sub
 {
   padding:0.5rem;  
@@ -184,6 +187,15 @@ main h2
 
 main ul {padding:0 1rem}
 main ul li {list-style-type:disclosure-closed;line-height:200%;padding-left:0.3rem}
+main ul li.firstopen {list-style-type:disclosure-open}
+main ul li.firstopen span.y {display:block;background-color:var(--bg-color);padding:0.5rem}
+
+main ul.disc {padding:0 1rem}
+main ul.disc li {list-style-type:disc;line-height:100%;padding-left:0.3rem}
+main ul.none li {list-style-type:none}
+
+.link summary {cursor:pointer}
+
 main pre {overflow:scroll;scroll-behavior:smooth}
 
 code.p {padding:1rem;margin:1rem;background-color:var(--bg-color);display:block;line-height:200%}
