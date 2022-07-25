@@ -200,6 +200,7 @@ main pre {overflow:scroll;scroll-behavior:smooth}
 
 code.p {padding:1rem;margin:1rem;background-color:var(--bg-color);display:block;line-height:200%}
 span.d {background-color:var(--bg-color);display:inline-block;line-height:200%;padding:0.5rem}
+p.note {background-color: var(--bg-color);padding:1rem}
 
 #bottom-copy
 {

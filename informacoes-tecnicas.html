@@ -188,6 +188,36 @@
 						
 					 </details>
 				</div>
+				
+				<div class="sub sub2">
+					
+					<h3>Widgets</h3>
+					
+					<h4>O que é um widget ?</h4>					
+					
+					<img src="https://wiki.flatpress.org/_media/doc:widgetconfig_screenshot.png" style="float:right;width:280px;margin:0 0 0 2rem;border:1px solid var(--bg-color)">
+					
+					<p>Um widget é um componente dinâmico exibido (dependendo do tema e da sua configuração) em uma barra superior, na barra lateral direita (padrão), etc. para imprimir o conteúdo da página quando chamado.
+						O FlatPress os chamas de "widget" e não de "blocks" porque vê os blocos como elementos passivos que apenas exibem conteúdo, enquanto os widgets (que são codificados em php como plugins comuns) podem obviamente executar código.</p>
+						
+					<p>Um widget pode fornecer funções mais avançadas do que apenas exibir uma lista de links (para o qual é sugerido a combinação <code>static+blockparser</code>), você pode, por exemplo, 
+					   ter um widget buscando exibir um feed rss de uma página da web externa. O único limite é o que o php pode fazer.</p>
+					
+					<h4>Como adiciono um novo widget ?</h4>
+					<p>Adicione o plugin correspondente à lista de plugins e à lista de widgets na seção e na posição desejada.
+						Os widgets são organizados em grupos ou barras; cada barra pode conter qualquer número de widgets. 
+						Essas barras são então exibidas no tema usando a tag especial <code>{widget pos=BAR}</code> ao qual <code>BAR</code> refere-se ao nome da barra.</p>
+
+					<p>Geralmente em temas você tem uma ou mais barras de widgets pré-definidas. Normalmente você tem pelo menos a barra direita; 
+						muitos temas exibem tanto o conteúdo da barra esquerda quanto da barra direita, mesmo que tenham uma única coluna de widgets (eles os mostram juntos, um grupo após o outro).</p>
+
+					<p>Para adicionar um widget, basta arrastá-lo e soltá-lo da direita para a barra que deseja que apareça.</p>
+					
+					<h4>Habilitei um widget no painel de plugins, mas não aparecem nas minhas barras laterais</h4>					
+					<p>Widgets são plugins especiais que fornecem uma função de widget; o FlatPress não sabe onde você quer que ele apareça, então, 
+						uma vez que um widget de plugin é carregado, você deve habilitá-lo também no painel de widgets (veja o tópico acima).</p>					
+					
+				</div><br>				
 <!--				
 				<div class="sub sub2">
 				
