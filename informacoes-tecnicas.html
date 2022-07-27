@@ -191,7 +191,7 @@
 				
 				<div class="sub sub2">
 					
-					<h3>Widgets</h3>
+					<h3 id="widgets">Widgets</h3>
 					
 					<h4>O que é um widget ?</h4>					
 					
@@ -218,22 +218,55 @@
 						uma vez que um widget de plugin é carregado, você deve habilitá-lo também no painel de widgets (veja o tópico acima).</p>					
 					
 				</div><br>				
-<!--				
-				<div class="sub sub2">
+			
+				<div class="sub sub2 link">
 				
-					<h3 id="">Como fazer backup do meu blog FlatPress ?</h3>
-					<p></p>
-					<p></p>
+					<h3 id="backup">Como fazer backup do meu blog FlatPress ?</h3>
+					<p>Como o FlatPress funciona em arquivos simples, o backup do seu blog é sempre apenas copiar pastas e arquivos. Na maioria dos casos, você usa seu software FTP favorito (por exemplo, FileZilla) para o trabalho.</p>
+					
+					<p>Você pode fazer backup do seu blog FlatPress em diferentes níveis:</p>
+					
+					<details>
+						<summary>Backup completo</summary>
+						<p>Esta é a maneira mais fácil e recomendada de fazer backup pois basta copiar todo o diretório do FlatPress de seu servidor web.</p>
+					</details>
+
+					<details>						
+						<summary>Backup de conteúdo criado pelo usuário</summary>
+						<p>Você pode querer fazer backup apenas do conteúdo do seu blog: entradas, páginas estáticas, arquivos carregados, comentários, configurações. Isso é útil se você planeja mover o conteúdo do seu blog para uma nova instalação do FlatPress.</p>
+						<p>Para cópia apenas da pasta <code>fp-contents</code> ao restaurar, pode ocorrer problemas com cache, além de não conter os plugins e temas que possam ter sido alterados e
+						   também não é possível alterar o diretório de instalação do Flatpress nem o nome do autor.</p>
+					</details>
+
+
+					<details>
+						<summary>Backup individual</summary>
+						<p>Esse método só pode ser feito manualmente e é extenso, pois muitas transferências individuais precisam ser iniciadas. Somente diretórios e arquivos que diferem de uma instalação padrão do Flatpress (ou seja, você os alterou…) são copiados. Use este método se você for um usuário experiente. A melhor maneira é construir um script de backup individual fazendo o trabalho.</p>
+						<p>É muito importante incluir todos os arquivos, diretórios e plugins que não fazem parte da instalação padrão do Flatpress.</p>
+						
+						<ol class="disc">
+							<li>fp-content/attachs (se usado)</li>
+							<li>fp-content/content</li>
+							<li>fp-content/images (se usado)</li>
+							<li>fp-content/…minhas_extensoes… (se usado)</li>
+							<li>fp-interface/themes/…meus_temas…</li>
+							<li>fp-plugins/…meus_plugins… (se usado)</li>
+						</ol>
+					</details>
+
+
 					
 				</div>
-				
+<!--					
 				<div class="sub sub2">
 				
 					<h3>Como lidar com comentários de spam ?</h3>
 					<p></p>
 					<p></p>
-					
+					-- To be written: Comment Center, how to work with Akismet plugin. 
 				</div>
+
+					-- TODO: about smarty; how to consume info site by feed;
 -->				<br><br>
 		  </section>
 			
