@@ -252,12 +252,41 @@
 							<li>fp-interface/themes/…meus_temas…</li>
 							<li>fp-plugins/…meus_plugins… (se usado)</li>
 						</ol>
+						
 					</details>
-
-
 					
 				</div>
+					
+				<div class="sub sub2">
+				
+					<h3 id="dir-idiomas">Diretrizes do pacote de idiomas</h3>
+					
+					<p>Os arquivos de idioma devem ser codificados em UTF-8 (sem BOM).</p>					
+					
+					<p>Quais arquivos traduzir?</p>
+					
+					<ol class="disc">
+						<li>Arquivos de idioma principal: Tudo em <code>fp-interface/lang/</code> (e, em seguida, seu código de idioma). A melhor prática é copiar a pasta en-us e depois traduzir arquivo por arquivo.</li>
+						<li>Arquivos de idioma do plug-in: Todos os arquivos em <code>fp-plugins/[nome do plug-in]/lang/</code></li>
+						<li>Arquivo de idioma de configuração: o arquivo na pasta <code>setup/lang/</code></li>						
+					</ol>
+											
+					<p>Um pacote de idiomas deve reproduzir parcialmente a estrutura de diretórios do FlatPress. O objetivo é ter um arquivo ZIP que pode ser simplesmente extraído em sua pasta FlatPress.</p>
+					
+				</div>
+
 <!--					
+					
+				<div class="sub sub2">
+				
+					<h3 id="smarty">Templates com Smarty</h3>
+					
+					<p></p>
+					<p></p>
+					<p></p>
+					
+				</div>	
+
 				<div class="sub sub2">
 				
 					<h3>Como lidar com comentários de spam ?</h3>
@@ -266,7 +295,7 @@
 					-- To be written: Comment Center, how to work with Akismet plugin. 
 				</div>
 
-					-- TODO: about smarty; how to consume info site by feed;
+					-- TODO: about smarty; how to consume info site by feed; url random
 -->				<br><br>
 		  </section>
 			

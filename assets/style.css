@@ -193,6 +193,9 @@ main ul li.firstopen span.y {display:block;background-color:var(--bg-color);padd
 main ul.disc {padding:0 1rem}
 main ul.disc li {list-style-type:disc;line-height:100%;padding-left:0.3rem}
 main ul.none li {list-style-type:none}
+main ul.none li {list-style-type:none}
+
+main ul.line-reduce li,main ol.line-reduce li {line-height:80%}
 
 .link summary {cursor:pointer}
 

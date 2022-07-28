@@ -111,10 +111,106 @@
 					</div>
 			 </div><br>	
 
-			<div class="sub sub2">
+			<div class="sub sub2 link">
 				
-				<h3>Atualização do FlatPress</h3>				
-				<p>Antes de alterar qualquer coisa em sua instância do FlatPress, sempre faça um <a href="informacoes-tecnicas.html#backup">backup</a> de toda a pasta, caso algo dê errado volte o backup.</p>
+				<h3>Atualização do FlatPress</h3>		
+				
+				<p class="note">Antes de alterar qualquer coisa em sua instância do FlatPress, sempre faça um <a href="informacoes-tecnicas.html#backup">backup</a> de toda a pasta, caso algo dê errado volte o backup.</p>
+				
+				<p>Existem algumas maneiras de atualizar uma instalação do Flatpress. Mas você deve considerar que tipo de atualização deseja fazer e quantas entradas e anexos já existem em seu blog.</p>
+				
+				<p>Opções de atualização:</p>
+				
+				<details>
+					<summary>Atualização de arquivos únicos, por exemplo, atualizações de segurança</summary>
+					<p>Esta é a maneira mais fácil com o mínimo de esforço. Basta substituir os arquivos em questão pelos novos, após isso limpar o cache. Este método é adequado para atualizações de segurança ou pequenas correções de bugs da versão do desenvolvedor (do SVN) ou para alterações dos arquivos do tema. Uma atualização de arquivos únicos deve ser testada para cada caso individual e é recomendada apenas para webmasters experientes.
+					</p>
+				</details>	
+				
+				<details>
+					<summary>Atualização do blog completo para uma nova versão movendo o conteúdo</summary>
+					
+					<p>Esta é uma opção muito interessante para atualizar um blog existente sem perda de conteúdo. O método requer acesso total ao espaço web e um bom software de FTP . Este método não é recomendado para instalações que residem no diretório raiz do seu webspace. O blog deve ser instalado em seu próprio subdiretório, por exemplo “/flatpress”.</p>
+					
+					<ol>
+						<li>Crie um diretório chamado “novo”</li>
+						<li>transfira a nova versão do Flatpress para o diretório “novo”</li>
+						<li>Renomeie o diretório atual do Flatpress para “antigo”</li>
+						<li>Renomeie o diretório “novo” para o nome que o diretório “antigo” tinha antes</li>
+						<li>Ajuste as permissões para do diretório “fp-content” para 777</li>
+						<li>Execute a configuração da maneira usual (incluindo seleção de idioma, menus e plugins)</li>
+						<li>Copie os dados do Flatpress de “antigo/fp-content/” para sua nova instalação</li>
+						<li>No Painel de Administração, vá no link 'Manutenção' e selecione 'Reconstruir o índice'</li>
+					</ol>
+					
+					<p><small>Nota Importante: Por motivos de segurança, é recomendado excluir tanto o diretório “Setup” quanto o arquivo “setup.php”</small></p>
+					
+					<p>Caso algo dê errado, você pode reativar sua instalação anterior apenas renomeando os diretórios de acordo.</p>
+					
+				</details>	
+				
+				<details>
+					<summary>Atualização do blog completo, incluindo um backup completo</summary>
+					
+					<p>Este deve ser o método de atualização preferido e é adequado para qualquer instalação do Flatpress.
+					   Não importa se o blog reside no diretório raiz de sua hospedagem ou em um subdiretório.
+					   Além disso, você tem um backup completo de seu espaço na web.</p>
+					
+					<p>Pode ser interessante colocar uma página index.html padrão com um texto informando que o site está em atualização.</p>
+					
+					<ol>
+						<li>Baixe seu blog completo usando seu software FTP</li>
+						<li>Exclua o conteúdo de blog na hospedagem</li>
+						<li>Suba a versão atual do Flatpress</li>
+						<li>Altere as permissões do diretório “fp-content” para 777</li>
+						<li>Execute a configuração da maneira usual (incluindo seleção de idioma, menus e plugins)</li>
+						<li>Transfira os dados do Flatpress do seu backup para sua nova instalação</li>
+						<li>No Painel de Administração, vá no link 'Manutenção' e selecione 'Reconstruir o índice'</li>						
+					</ol>
+					
+				</details>	
+						
+				<details>
+					<summary>Atualização de um pacote de idiomas mais recente</summary>
+					
+					<p>Caso você esteja usando o pacote de idioma alemão, você pode atualizar transferindo os arquivos para o sua hospedagem.
+					   Os arquivos só precisam ter as permissões para sobrescrevê-los. Você pode atualizar o pacote de idiomas sem sair do serviço.</p>
+					
+					<p>Atualmente o CMS v1.2.1 inclui os seguintes idiomas Inglês, Portugues do Brasil, Tcheco, Holandês, Francês, Alemão, Grego, Italiano, Japonês e Espanhol. Para gerar uma nova versão ou atualização saiba mais em <a href="informacoes-tecnicas.html#dir-idiomas">aqui</a>.</p>
+					
+				</details>	
+				
+				<details>
+					<summary>Atualização de um tema</summary>
+
+					<p>Como primeiro passo, você deve alterar o tema Flatpress para o tema padrão Leggero. Dessa forma, o tema a ser atualizado não é acessado pelos visitantes do seu espaço na web e, portanto, pode ser alterado e sobrescrito. Depois de transferir com sucesso os arquivos de tema atualizados, você pode voltar para o novo tema.</p>
+					
+					<p>Dentro da sua instalação do Flatpress, os temas podem ser encontrados no caminho: <code>/fp-interface/themes/…nome_tema…</code></p>
+									
+					<ol>
+						<li>Altere o tema atual para outro (exemplo Leggero)</li>
+						<li>Faça o backup do tema que deseja atualizar</li>
+						<li>Envie o tema atualizado para a hospedagem</li>
+						<li>No Painel de Administração, vá no link 'Manutenção' e selecione "Limpe cache de tema e modelos"</li>
+						<li>Mude para o novo tema</li>
+					</ol>	
+					
+				</details>	
+				
+				<details>
+					<summary>Atualização de uma extensão</summary>
+					
+					<p>Ao atualizar um plugin, você deve seguir basicamente o mesmo procedimento de atualizar um tema. Recomenda-se desativar o plugin a ser atualizado no painel de administração do plugin, antes de fazer a atualização.</p>
+					
+					<ol>
+						<li>Desative a extensão (plugin)</li>
+						<li>Faça o backup da extensão que deseja atualizar</li>
+						<li>Envie a extensão atualizada para a hospedagem no diretório <code>/fp-plugins</code> e descompacte</li>
+						<li>No painel de administração, vá em 'Plugins', localize-o e clique em Ativar</li>
+						<li>Se ocorrer uma falha, desative o plugin e volte o backup anterior</li>
+					</ol>		
+					
+				</details>
 			</div>
 				
 		  </section>
