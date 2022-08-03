@@ -277,17 +277,167 @@ fp-interface/
 	
 							   index.tpl							&lt;- Carrega a página do tema (blog ou site)
 							   admin.tpl							&lt;- Entrada da página de administração
+	
+							   preview.png							&lt;- Visualização padrão do tema que aparece no painel
 							   
 							   pastaNomeDoEstilo/					&lt;- Deve ser inserido no arquivo de configuração acima 
 													   				   na variável theme['default_style'] o nome dessa pasta
 	
-									   			preview.png			&lt;- Visualização do tema que aparece no painel
+									   			preview.png			&lt;- Visualização do estilo que personalizado
 	
 								   				style.conf.php		&lt;- Arquivo de configuração do estilo
 	
 												res/				&lt;- Contém os arquivos de recursos utilizados no template como css, dentre outros
 												   style.css
 												   admin.css
+	
+</code>
+					
+
+					<p>Abaixo o conteúdo de alguns arquivos com algumas informações</p>
+<code class="minilight"># theme.conf.php
+	
+&lt;?php
+/*
+ * Theme Name: NomeDoSeuTema
+ * Theme URI: http://www.nomeDoSiteDoTema.com
+ * Description: Descreva aqui sobre seu tema.&lt;br>&lt;br>Este tema possui outros estilos &lt;a href="admin.php?p=themes&action=style">veja aqui&lt;/a>
+ * Version: 0.71
+ * Author: NomeDeQuemCriou
+ * Author URI: http://www.nomeDoSiteDoDesenvolvedor.net
+ */
+	
+$theme['name'] = 'NomeDoSeuTema';
+$theme['author'] = 'NomeDeQuemCriou';
+$theme['www'] = 'http://www.nomeDoSiteDoTema.com';
+$theme['description'] = 'Descreva aqui sobre seu tema.';
+
+# coloque aqui um numero da versão; devido a bug de não imprimir a pasta do estilo padrão, deve ser igual ou superior a 0.71
+# sugiro para testes até 0.99 e versões estáveis 1.0 em diante
+$theme['version'] = 0.71;
+
+	
+$theme['default_style'] = 'pastaNomeDoEstilo';  # trata-se da pasta do estilo padrão
+$theme['style_def'] = 'style.css'; 			 	# nome do arquivo CSS para o estilo padrão
+$theme['style_admin'] = 'admin.css';			# css do painel de administração
+
+# sobrescreve o menu padrão e o layout do painel
+remove_filter('admin_head', 'admin_head_action');
+
+# registra dois widgetsets para o tema
+register_widgetset('right');
+register_widgetset('left');
+	
+?>	
+</code>
+<br>
+<code class="minilight"># index.tpl      
+{* Este é um comentário em Smarty que não será mostrado nem processado *} 	
+&lt;!-- Você pode incluir comentário HTML também, que ficarão visíveis no código -->	
+{* Essa index.tpl é a página de entrada do blog, você pode incluir só HTML se quiser nessa página *} 	
+	
+{* Inclui um arquivo com o cabeçalho do HTML (não é obrigatório, inclusão de arquivos) *} 		
+{include file=header.tpl}
+
+	&lt;div id="main">
+	
+		{* Define uma marcação de bloco *}
+		{entry_block}
+			
+			{* define as entradas *}
+			{entry}
+				{include file='entry-default.tpl'}
+			{/entry}
+
+			&lt;div class="navigation">
+				{nextpage}{prevpage}
+			&lt;/div>
+
+		{/entry_block}
+
+	&lt;/div>			
+
+	{include file=widgets.tpl}
+				
+{include file=footer.tpl}
+	
+</code><br>
+	
+<code class="minilight">
+	# Exemplo de inserção de arquivo - url válida
+	
+	{* caminho absoluto *}
+	{include file="/usr/local/include/templates/cabecalho.tpl"}
+	
+	{* caminho absoluto (idem) *}
+	{include file="file:/usr/local/include/templates/cabecalho.tpl"}
+	
+	{* caminho absoluto do windows (DEVE usar o prefixo "file:") *}
+	{include file="file:C:/www/pub/templates/cabecalho.tpl"}
+	
+	{* incluir a partir do recurso de template chamado "db" *}
+	{include file="db:header.tpl"}
+		
+	-------------------------------------------------------------------
+	
+	# Trabalhando diretamente com PHP
+
+	{php}
+		// Inclua aqui códigos PHP que serão ignorados pelo processador Smarty
+	
+		// Script php diretamente no template 		
+		include("/caminho/para/condicoes_do_tempo.php");
+	
+	{/php}
+	
+	-------------------------------------------------------------------
+	
+	# Carregando arquivo externo PHP e atribuindo no template
+	# Modo correto de usar ao invés de "{php} ... {/php}" que está depreciada 
+	
+	  # load_nav.php
+	    ------------
+	   &lt;?php
+	    // carrega variáveis de um banco de dados mysql e define elas para o template
+	      require_once("MySQL.class.php");
+	      $sql = new MySQL;
+	      $sql->query("select * from site_nav_sections order by name",SQL_ALL);
+	      $this->assign('sections',$sql->record);
+	   ?>	
+	
+	  # index.tpl
+	   ---------
+	   {* inclui o arquivo com os dados acima *}
+	   {include_php file="/caminho/para/load_nav.php"}
+	
+	   {* itera sobre os dados '$sections' atribuidos no arquivo acima *}
+	   {foreach item="curr_section" from=$sections}
+	     &lt;a href="{$curr_section.url}">{$curr_section.name}&lt;/a>&lt;br>
+	   {foreachelse}
+		 Nenhum resultado encontrado
+	   {/foreach}
+	
+	-------------------------------------------------------------------
+	
+	# Miscelaneas
+	
+	{* tudo que estiver dentro das tags abaixo será apresentado em uma linha *}
+	{strip}
+  	  &lt;table border=0>
+	    &lt;tr>
+	     &lt;td>
+		  ...
+	  &lt;/table>
+	{/strip}
+		
+	será mostrado como:
+	&lt;table border=0>&lt;tr>&lt;td>...
+	
+	
+	# Email com codificação em JS ou Hexadecimal
+	
+	{mailto address="me@domain.com" encode="javascript" subject="Hello to you!" cc="you@domain.com,they@domain.com" extra='class="email"'}
+	{mailto address="me@domain.com" encode="hex" extra='class="email"'}
 	
 </code>
 					
