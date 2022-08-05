@@ -258,8 +258,8 @@
 					
 					<p>O FlatPress utiliza o Smarty para auxílio na criação de temas.</p>
 					
-					<p><a href="https://www.smarty.net/docsv2/pt_BR/">Smarty</a> é um sistema que traduz templates contendo tags especiais em php.
-					   Ele nos permite abstrair mais da lógica e deve facilitar para leigos em programação projetar um modelo. Caso não tenha familiaridade, sugiro que leia a documentação.</p>
+					<p><a href="https://www.smarty.net/">Smarty</a> é um sistema que traduz templates contendo tags especiais para o php.
+					   Ele nos permite abstrair mais da lógica e a facilitar ao projetar um modelo. Caso não tenha familiaridade, sugiro que leia a <a href="https://www.smarty.net/documentation">documentação</a> v3 e v4 (somente em inglês) e a v2 (em português, mas desatualizada).</p>
 					
 					<p class="note">Está em teste a <a href="https://www.flatpress.org/2022/06/26/latest-development-news/">atualização de versão do FlatPress com o Smarty 4.x em branch separado</a>.</p>
 					
@@ -277,6 +277,7 @@ fp-interface/
 	
 							   index.tpl							&lt;- Carrega a página do tema (blog ou site)
 							   admin.tpl							&lt;- Entrada da página de administração
+							   default.tpl							&lt;- Página padrão utilizada quando ocorre, por exemplo paginação
 	
 							   preview.png							&lt;- Visualização padrão do tema que aparece no painel
 							   
@@ -295,6 +296,70 @@ fp-interface/
 					
 
 					<p>Abaixo o conteúdo de alguns arquivos com algumas informações</p>
+
+<code class="minilight"># index.tpl      
+{* Este é um comentário em Smarty que não será mostrado nem processado *} 	
+&lt;!-- Você pode incluir comentário HTML também, que ficarão visíveis no código -->	
+{* Essa index.tpl é a página de entrada do blog, você pode incluir só HTML se quiser nessa página *} 	
+	
+{* Inclui um arquivo com o cabeçalho do HTML (não é obrigatório, inclusão de arquivos) *} 		
+{include file=header.tpl}
+
+	&lt;div id="main">
+	
+		{* Define uma marcação de bloco *}
+		{entry_block}
+			
+			{* define as entradas *}
+			{entry}
+				{include file='entry-default.tpl'}
+			{/entry}
+
+			{* A paginação requer o template default.tpl *}
+			&lt;div class="navigation">
+				{nextpage}{prevpage}
+			&lt;/div>
+
+		{/entry_block}
+
+	&lt;/div>			
+
+	{include file=widgets.tpl}
+				
+{include file=footer.tpl}
+	
+</code><br>
+				
+<code class="minilight"># admin.tpl
+{* Página de entrada padrão do painel de administração *} 	
+	
+{* Inclui um arquivo com o cabeçalho do HTML (não é obrigatório, inclusão de arquivos, caso não queira) *}
+{* Editando da maneira correta você pode refazer o painel do modo que achar mais interessante *}
+{* Baixe outros temas e veja os arquivos de cada um e edite conforme suas necessidades *}
+{include file=cpheader.tpl}
+
+	&lt;div id="cpmain">
+
+		&lt;div class="entry">
+		
+		  &lt;ul id="admin-small-nav">
+		  	  &lt;li>&lt;a href="{$smarty.const.BLOG_BASEURL}">Home&lt;/a>&lt;/li>
+			  &lt;li>&lt;a href="{$smarty.const.BLOG_BASEURL}login.php?do=logout">Logout&lt;/a>&lt;/li>
+		  &lt;/ul>
+		
+		{page}
+				&lt;h1 class="title">{$subject}&lt;/h1>
+				&lt;div class="body">{controlpanel}&lt;/div>
+		{/page}
+	
+		&lt;/div>
+		
+	&lt;/div>
+	
+{include file=footer.tpl}
+	
+</code><br>
+					
 <code class="minilight"># theme.conf.php
 	
 &lt;?php
@@ -330,38 +395,37 @@ register_widgetset('left');
 	
 ?>	
 </code>
-<br>
-<code class="minilight"># index.tpl      
-{* Este é um comentário em Smarty que não será mostrado nem processado *} 	
-&lt;!-- Você pode incluir comentário HTML também, que ficarão visíveis no código -->	
-{* Essa index.tpl é a página de entrada do blog, você pode incluir só HTML se quiser nessa página *} 	
+<br>					
+
+<code class="minilight"># style.conf.php
 	
-{* Inclui um arquivo com o cabeçalho do HTML (não é obrigatório, inclusão de arquivos) *} 		
-{include file=header.tpl}
-
-	&lt;div id="main">
+&lt;?php
+/*
+ * Style Name: Nome do Estilo
+ * Style URI: http://www.nomeDoSiteDoTema.com
+ * Description: Informação sobre o estilo
+ *	
+ * Version: 0.705 						# Número da versão do estilo
+ * Author: NomeDeQuemCriou
+ * Author URI: http://www.nomeDoSiteDoDesenvolvedor.net
+ */
 	
-		{* Define uma marcação de bloco *}
-		{entry_block}
-			
-			{* define as entradas *}
-			{entry}
-				{include file='entry-default.tpl'}
-			{/entry}
+$style['name'] = 'NomeDoSeuEstilo';
+$style['author'] = 'NomeDeQuemCriou';
+$style['www'] = 'http://www.nomeDoSiteDoTema.com';
 
-			&lt;div class="navigation">
-				{nextpage}{prevpage}
-			&lt;/div>
+# versão do estilo
+$style['version'] = 0.705;
 
-		{/entry_block}
-
-	&lt;/div>			
-
-	{include file=widgets.tpl}
-				
-{include file=footer.tpl}
+# arquivos padrões do estilo localizados dentro da pasta 'res'
+$style['style_def'] = 'style.css';
+$style['style_admin'] = 'admin.css';
+$style['style_print'] = 'print.css';
+$style['style'] = 'default';
 	
-</code><br>
+?>	
+</code>
+<br>					
 	
 <code class="minilight">
 	# Exemplo de inserção de arquivo - url válida
@@ -451,17 +515,25 @@ register_widgetset('left');
 						<li><span>{$flatpress.autor}</span> - Nome do autor</li>
 						<li><span>{$flatpress.email}</span> - Endereço de e-mail</li>
 						<li><span>{$flatpress.maxentries}</span> - Número máximo de entradas mostradas por página </li>
-						<li><span>{$fp_config.locale.lang}</span> - Informa o idioma corrente do FlatPress, por exemplo 'pt-br' para Português, e 'en-us' para Inglês Americano</li>
-						<li><span>{$fp_config.locale.dateformat}</span> - Formato da data</li>
-						<li><span>{$fp_config.locale.timeformat}</span> - Formato da hora </li>
 						<li><span>{$flatpress.version}</span> - Versão do CMS</li>
 						<li><span>{$flatpress.charset}</span> - Informa o conjunto de caracteres</li>
+						<li><span>{$flatpress.themeurl}</span> - Retorna a URL do tema que está ativa (por exemplo: /fp-interface/themes/leggero/)<br><br></li>
+						
+						<li><span>{$fp_config.locale.lang}</span> - Informa o idioma corrente do FlatPress, por exemplo 'pt-br' para Português, e 'en-us' para Inglês Americano</li>
+						<li><span>{$fp_config.locale.dateformat}</span> - Formato da data</li>
+						<li><span>{$fp_config.locale.timeformat}</span> - Formato da hora<br><br></li>
+
 						<li><span>{$smarty.const.BLOG_BASEURL}</span> - Informa a URL base, por exemplo, para a instalação na pasta flatpress retornará <em>https://www.site.com/flatpress/</em></li>
-						<li><span>{$flatpress.themeurl}</span> - Retorna a URL do tema que está ativa (por exemplo: /fp-interface/themes/leggero/)</li>
+						<li><span> {$smarty.now|date_format:"%d/%m/%Y %H:%M:%S"}</span> - Formata a hora no padrão português <code>dd/mm/yyyy hh:mm:ss</code></li>
+						<li><span>{$smarty.server.SERVER_NAME}</span> - Retorna o nome do servidor<br><br></li>
+						
 						<li><span>{$subject}</span> - Título da postagem</li>
-						<li><span>{$pagetitle}</span> - Contém o título da página que está sendo visualizada</li>
+						<li><span>{$pagetitle}</span> - Contém o título da página que está sendo visualizada<br><br></li>
+						
 						<li><span>{$panelstrings.descr}</span> - Descrição do Painel, dentro da Área de Administração</li>
-						<li><span>{$panelstrings.head}</span> - O título do Painel, dentro da Área de Administração</li>						
+						<li><span>{$panelstrings.head}</span> - O título do Painel, dentro da Área de Administração<br><br></li>
+						
+						<li><span>{nextpage}/{prevpage}</span> - Variáveis de paginação para pagina próxima e antiga</li>
 					</ul><br>
 					
 					<p>Usando as variáveis abaixo é possível entrar/referenciar um diretório Plugin: <span>PLUGINS_DIR/plugin.PLUGINNAME/PLUGINFILE</span></p>
