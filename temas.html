@@ -259,7 +259,8 @@
 					<p>O FlatPress utiliza o Smarty para auxílio na criação de temas.</p>
 					
 					<p><a href="https://www.smarty.net/">Smarty</a> é um sistema que traduz templates contendo tags especiais para o php.
-					   Ele nos permite abstrair mais da lógica e a facilitar ao projetar um modelo. Caso não tenha familiaridade, sugiro que leia a <a href="https://www.smarty.net/documentation">documentação</a> v3 e v4 (somente em inglês) e a v2 (em português, mas desatualizada).</p>
+					   Ele nos permite abstrair mais da lógica e a facilitar ao projetar um modelo. Caso não tenha familiaridade, sugiro que leia a 
+						<a href="https://www.smarty.net/documentation">documentação</a> v3 e v4 (somente em inglês) e a v2 (em português, mas desatualizada).</p>
 					
 					<p class="note">Está em teste a <a href="https://www.flatpress.org/2022/06/26/latest-development-news/">atualização de versão do FlatPress com o Smarty 4.x em branch separado</a>.</p>
 					
@@ -452,6 +453,11 @@ $style['style'] = 'default';
 		// Script php diretamente no template 		
 		include("/caminho/para/condicoes_do_tempo.php");
 	
+		// Use esse comando no início do index.tpl para verificar quais as variáveis do flatpress
+		echo '&lt;pre>';
+			print_r($this->get_template_vars());
+		echo '&lt;/pre>';
+	
 	{/php}
 	
 	-------------------------------------------------------------------
@@ -524,9 +530,16 @@ $style['style'] = 'default';
 						<li><span>{$fp_config.locale.timeformat}</span> - Formato da hora<br><br></li>
 
 						<li><span>{$smarty.const.BLOG_BASEURL}</span> - Informa a URL base, por exemplo, para a instalação na pasta flatpress retornará <em>https://www.site.com/flatpress/</em></li>
-						<li><span> {$smarty.now|date_format:"%d/%m/%Y %H:%M:%S"}</span> - Formata a hora no padrão português <code>dd/mm/yyyy hh:mm:ss</code></li>
+						<li><span>{$smarty.now|date_format:"%d/%m/%Y %H:%M:%S"}</span> - Formata a hora no padrão português <code>dd/mm/yyyy hh:mm:ss</code></li>
 						<li><span>{$smarty.server.SERVER_NAME}</span> - Retorna o nome do servidor<br><br></li>
+							
+						<li><span>{#foo#} ou  {$smarty.config.foo}</span> - Retorna o valor da váriavel 'foo' definida em um arquivo .conf carregada pela sintaxe "{config_load file='foo.conf'}" <a href="https://www.smarty.net/docs/en/language.config.variables.tpl">[+]</a><br><br></li>
 						
+						<li><span>{literal} conteúdo {literal}</span> - Envolva o texto ou código com essas tags quando precisar que o processador Smarty deixe como está escrito</li>
+						<li><span>{"texto "|substr:3|strtoupper}</span> - Remove as 3 primeiras letras do subtítulo e altera para maiuscula (note que apenas um parâmetro é aceito na função após o '|') <a href="https://www.smarty.net/docs/en/language.modifiers.tpl">[+]</a></li>
+							
+						<li><span>{$artigo|truncate:40:"..."}</span> - Quebra o conteúdo da string em 40 caracteres e insere os 3 pontinhos<br><br></li>
+							
 						<li><span>{$subject}</span> - Título da postagem</li>
 						<li><span>{$pagetitle}</span> - Contém o título da página que está sendo visualizada<br><br></li>
 						
@@ -534,6 +547,15 @@ $style['style'] = 'default';
 						<li><span>{$panelstrings.head}</span> - O título do Painel, dentro da Área de Administração<br><br></li>
 						
 						<li><span>{nextpage}/{prevpage}</span> - Variáveis de paginação para pagina próxima e antiga</li>
+							
+						<!-- 
+						<li><span></span> - </li>
+						<li><span></span> - <br><br></li>
+						not working tested v3
+						<li><span>{assign var=foo value=substr($bar,2,5)}</span> - Cria a variável 'foo' e atribui o resultado retornado pela função PHP substr()<br><br></li>
+						<li><span>{time()}</span> - Acesso direto a função PHP</li> 
+						-->
+							
 					</ul><br>
 					
 					<p>Usando as variáveis abaixo é possível entrar/referenciar um diretório Plugin: <span>PLUGINS_DIR/plugin.PLUGINNAME/PLUGINFILE</span></p>
