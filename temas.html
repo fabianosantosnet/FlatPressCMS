@@ -276,9 +276,21 @@ fp-interface/
 							   theme.conf.php						&lt;- Arquivo com as configurações, a variável theme['version'] 
 													   				   deve ser maior que 0.70 para o estilo carregar corretamente
 	
-							   index.tpl							&lt;- Carrega a página do tema (blog ou site)
 							   admin.tpl							&lt;- Entrada da página de administração
-							   default.tpl							&lt;- Página padrão utilizada quando ocorre, por exemplo paginação
+	
+							   index.tpl							&lt;- Página de entrada do tema (blog ou site)
+							   default.tpl							&lt;- Página padrão utilizada na paginação, no comentário, página de erro etc
+							   static.tpl							&lt;- Requerido quando há páginas estáticas, por exemplo, página 'Sobre'
+	
+							   comments.tpl							&lt;- Template necessário ao chamar a URL com final '.../SeuArtigo/<b>comments</b>'
+																	   Não é obrigatório, deixe vazio caso não vá utilizar comentários ou essa URL
+																	   Você pode utilizar o Disqus substituindo todo conteúdo de
+																	  '{comments}...{/comments}' por 
+																	  '{literal} código JS {/literal}' (mas não recomendo)
+	
+							   preview.tpl							&lt;- Item incluso no início do Editor quando edita uma postagem
+																	   Se não interessar a pré-visualização, crie o arquivo com o
+																	   texto "Pré-visualização Desativada"
 	
 							   preview.png							&lt;- Visualização padrão do tema que aparece no painel
 							   
@@ -308,10 +320,10 @@ fp-interface/
 
 	&lt;div id="main">
 	
-		{* Define uma marcação de bloco *}
+		{* Define uma marcação de bloco 'igual a tag HTML, tem apenas fins semanticos' *}
 		{entry_block}
 			
-			{* define as entradas *}
+			{* define as entradas - requerido *}
 			{entry}
 				{include file='entry-default.tpl'}
 			{/entry}
@@ -511,7 +523,7 @@ $style['style'] = 'default';
 	
 </code>
 					
-					<h4>Constantes</h4>
+					<h4>Constantes do Tema</h4>
 					
 					<ul class="disc line-reduce">
 						<li><span>{$flatpress.title}</span> - Título do Blog</li>
@@ -524,28 +536,40 @@ $style['style'] = 'default';
 						<li><span>{$flatpress.version}</span> - Versão do CMS</li>
 						<li><span>{$flatpress.charset}</span> - Informa o conjunto de caracteres</li>
 						<li><span>{$flatpress.themeurl}</span> - Retorna a URL do tema que está ativa (por exemplo: /fp-interface/themes/leggero/)<br><br></li>
-						
+							
+						<li><span>{$subject}</span> - Título da postagem</li>
+						<li><span>{$pagetitle}</span> - Contém o título da página que está sendo visualizada<br><br></li>						
+					
+					</ul>
+							
+					<h4>Constantes do Painel</h4>
+							
+					<ul class="disc line-reduce">						
 						<li><span>{$fp_config.locale.lang}</span> - Informa o idioma corrente do FlatPress, por exemplo 'pt-br' para Português, e 'en-us' para Inglês Americano</li>
 						<li><span>{$fp_config.locale.dateformat}</span> - Formato da data</li>
 						<li><span>{$fp_config.locale.timeformat}</span> - Formato da hora<br><br></li>
-
+						<li><span>{$panelstrings.descr}</span> - Descrição do Painel, dentro da Área de Administração</li>
+						<li><span>{$panelstrings.head}</span> - O título do Painel, dentro da Área de Administração<br><br></li>
+					</ul>
+							
+					<h4>Outros</h4>	
+						
+				    <p>A <a href="https://www.smarty.net/docs/en/language.variables.smarty.tpl">variável reservada smarty</a> possui várias utilidades, destaco abaixo apenas algumas:</p>									
+							
+					<ul class="disc line-reduce">						
 						<li><span>{$smarty.const.BLOG_BASEURL}</span> - Informa a URL base, por exemplo, para a instalação na pasta flatpress retornará <em>https://www.site.com/flatpress/</em></li>
 						<li><span>{$smarty.now|date_format:"%d/%m/%Y %H:%M:%S"}</span> - Formata a hora no padrão português <code>dd/mm/yyyy hh:mm:ss</code></li>
 						<li><span>{$smarty.server.SERVER_NAME}</span> - Retorna o nome do servidor<br><br></li>
 							
-						<li><span>{#foo#} ou  {$smarty.config.foo}</span> - Retorna o valor da váriavel 'foo' definida em um arquivo .conf carregada pela sintaxe "{config_load file='foo.conf'}" <a href="https://www.smarty.net/docs/en/language.config.variables.tpl">[+]</a><br><br></li>
+						<li><span>{$smarty.get.page}</span> - Mostra o valor de exibição da página do URL ($_GET) <code>.../index.php?<b>page=foo</b></code></li>
+						<li><span>{$smarty.post.page}</span> - Retorna o valor da variável page da requisição $_POST <code>.../index.php?<b>page=foo</b></code></li>	
+							
+						<li><span>{#foo#} ou {$smarty.config.foo}</span> - Retorna o valor da váriavel 'foo' definida em um arquivo .conf carregada pela sintaxe "{config_load file='foo.conf'}" <a href="https://www.smarty.net/docs/en/language.config.variables.tpl">[+]</a><br><br></li>
 						
 						<li><span>{literal} conteúdo {literal}</span> - Envolva o texto ou código com essas tags quando precisar que o processador Smarty deixe como está escrito</li>
-						<li><span>{"texto "|substr:3|strtoupper}</span> - Remove as 3 primeiras letras do subtítulo e altera para maiuscula (note que apenas um parâmetro é aceito na função após o '|') <a href="https://www.smarty.net/docs/en/language.modifiers.tpl">[+]</a></li>
+						<li><span>{"texto "|substr:3|strtoupper}</span> - Remove as 3 primeiras letras do subtítulo e altera para maiuscula (após o '|' é chamado a função e os ':' separa os parâmetros) <a href="https://www.smarty.net/docs/en/language.modifiers.tpl">[+]</a></li>
 							
-						<li><span>{$artigo|truncate:40:"..."}</span> - Quebra o conteúdo da string em 40 caracteres e insere os 3 pontinhos<br><br></li>
-							
-						<li><span>{$subject}</span> - Título da postagem</li>
-						<li><span>{$pagetitle}</span> - Contém o título da página que está sendo visualizada<br><br></li>
-						
-						<li><span>{$panelstrings.descr}</span> - Descrição do Painel, dentro da Área de Administração</li>
-						<li><span>{$panelstrings.head}</span> - O título do Painel, dentro da Área de Administração<br><br></li>
-						
+						<li><span>{$artigo|truncate:40:"..."}</span> - Quebra o conteúdo da string em 40 caracteres e insere os 3 pontinhos (uso de 2 parâmetros)<br><br></li>													
 						<li><span>{nextpage}/{prevpage}</span> - Variáveis de paginação para pagina próxima e antiga</li>
 							
 						<!-- 
@@ -557,17 +581,6 @@ $style['style'] = 'default';
 						-->
 							
 					</ul><br>
-					
-					<p>Usando as variáveis abaixo é possível entrar/referenciar um diretório Plugin: <span>PLUGINS_DIR/plugin.PLUGINNAME/PLUGINFILE</span></p>
-					
-					<ul class="disc line-reduce">
-						<li><span>PLUGINS_DIR</span> - O diretório onde os Plugins estão armazenados </li>
-						<li><span>PLUGINNAME</span> - Nome do Plugin</li>
-					</ul>		
-					
-					<p>Outras variáveis podem ser encontradas em <code>\admin\panels\entry\admin.entry.commentlist.tpl</code></p>
-					
-					
 					
 				</div>
 				
