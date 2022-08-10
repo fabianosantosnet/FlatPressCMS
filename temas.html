@@ -305,6 +305,11 @@ fp-interface/
 												   style.css
 												   admin.css
 	
+							   pastaNomeDoEstilo2/					&lt;- Seguir a mesma estrutura do 'pastaNomeDoEstilo/'
+												...
+							   pastaNomeDoEstilo3/					
+												...
+	
 </code>
 					
 
@@ -313,7 +318,7 @@ fp-interface/
 <code class="minilight"># index.tpl      
 {* Este é um comentário em Smarty que não será mostrado nem processado *} 	
 &lt;!-- Você pode incluir comentário HTML também, que ficarão visíveis no código -->	
-{* Essa index.tpl é a página de entrada do blog, você pode incluir só HTML se quiser nessa página *} 	
+{* Essa index.tpl é a página de entrada do blog, você pode incluir só HTML se quiser *} 	
 	
 {* Inclui um arquivo com o cabeçalho do HTML (não é obrigatório, inclusão de arquivos) *} 		
 {include file=header.tpl}
@@ -337,6 +342,7 @@ fp-interface/
 
 	&lt;/div>			
 
+	{* não é obrigatório separar os widgets em outro arquivo, pode ser inserido nesse arquivo *}
 	{include file=widgets.tpl}
 				
 {include file=footer.tpl}
@@ -512,7 +518,7 @@ $style['style'] = 'default';
 	  &lt;/table>
 	{/strip}
 		
-	será mostrado como:
+	{* será renderizado no navegador como: *}
 	&lt;table border=0>&lt;tr>&lt;td>...
 	
 	
@@ -573,15 +579,50 @@ $style['style'] = 'default';
 						<li><span>{nextpage}/{prevpage}</span> - Variáveis de paginação para pagina próxima e antiga</li>
 							
 						<!-- 
-						<li><span></span> - </li>
-						<li><span></span> - <br><br></li>
 						not working tested v3
 						<li><span>{assign var=foo value=substr($bar,2,5)}</span> - Cria a variável 'foo' e atribui o resultado retornado pela função PHP substr()<br><br></li>
 						<li><span>{time()}</span> - Acesso direto a função PHP</li> 
 						-->
 							
-					</ul><br>
+					</ul>
 					
+					<h4>Implementar e Mover as Extensões</h4>							
+					
+				    <p>Na estrutura do tema você irá deixar uma ou mais áreas para inserir as extensões (plugins). Estas são movimentadas de um local para o outro através dos widgets.</p>
+					
+<code class="minilight"># Insere o widget na coluna esquerda do tema
+	
+&lt;div class="col-left"&gt;
+	{widget pos=left}
+		{$subject}
+		{$content}
+	{/widget}
+&lt;/div&gt;
+	
+# Insere o widget na coluna direita do tema
+	
+&lt;div class="col-right"&gt;
+	{widget pos=right}
+		{$subject}
+		{$content}
+	{/widget}
+&lt;/div&gt;
+	
+# outros valores de pos (posição) são 'top' e 'bottom'
+	
+{widget pos=top}
+	...
+{widget pos=bottom}
+...
+	
+</code>
+					<p>Caso queira definir um valor de pos, além dos informados acima, edite o arquivo <code>/fp-content/config/widgets.conf.php</code> e insira mais um valor no array.</p>
+					
+					
+					<p>Leia mais sobre os <a href="informacoes-tecnicas.html#widgets">widgets</a> e o <a href="extensoes.html#dev">desenvolvimento das extensões e inserção no tema</a>.</p>
+						
+					<br><hr><br>
+					<p><small>Mais informações no wiki oficial sobre <a href="https://wiki.flatpress.org/doc:tips:widgets">Widgets</a> e <a href="https://wiki.flatpress.org/doc:thememinihowto">criação de tema</a></small></p>
 				</div>
 				
 			</section>

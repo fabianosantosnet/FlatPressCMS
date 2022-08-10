@@ -99,7 +99,7 @@
 						<li>Thumbnails - Se estiver carregado, usando o parâmetro <code>scale</code> em uma imagem (por exemplo: [img=images/something.jpg scale=50%]). A miniatura é armazenada em cache no diretório <code>images/.thumbs</code></li>
 					</ul>
 					
-					<p class="note">Um tipo de plugin especial é o Widget. Saiba mais no link <a href="informacoes-tecnicas.html">Diversos</a>.</p>
+					<p class="note">Um tipo de plugin especial é o Widget. Saiba mais no link <a href="informacoes-tecnicas.html#widgets">Diversos</a>.</p>
 					
 					<!-- https://wiki.flatpress.org/res:plugins  / https://wiki.flatpress.org/res:plugins:legacyplugins -->
 					
@@ -131,7 +131,6 @@
 					<h3>Estrutura da pasta fp-plugins</h3><br>
 					
 <code class="minilight">	
-
 	fp-plugins/																&lt;-- Contém os plugins do CMS
 			  delete.me
 
@@ -386,14 +385,69 @@
 </code>			
 					
 					
-					<h3>Informações de desenvolvimento</h3>
+					<h3 id="dev">Informações de desenvolvimento</h3>
 
+					<p>Aumente as funcionalidades do FlatPress através das extensões.</p>
+					
+					<h4>Estrutura padrão de uma extensão</h4>
+<code class="minilight">
+	fp-plugins/
+			  nomeDaExtensao/
+							plugin.NomeDaExtensao.php				&lt;-- Define e executa o processamento da extensão
+	
+							lang/									&lt;-- Define os idiomas que serão utilizados
+								lang.en-us.php
+								...
+								lang.pt-br.php
+	
+</code><br>
 
+					<p>Exemplos de códigos:</p>
+					<p>Veja conforme abaixo que é definido nos comentários as informações da extensão que irá aparecer no Painel de Administrador do FlatPress,
+					    em seguida você desenvolve uma função, que realiza alguma tarefa e depois é chamada através de add_action ou add_filter. Caso prefira um único
+						idioma insira o texto direto no plugin, do contrário crie um arquivo de idioma, e utilize lang_load para ler as chaves traduzidas. Por fim,
+						registre o widget com register_widget. Lembre-se de incluir no arquivo theme.conf.php do tema a função register_widgetset para que esteja habilitado widgets.</p>
+						
+<code class="minilight">
+&lt;?php
+
+/*
+ * Plugin Name: NomeDestePlugin
+ * Plugin URI: https://www.siteDoPlugin.com
+ * Author: Nome do Autor
+ * Author URI: https://www.siteDoAutor.com
+ * Description: Descreva o que esse plugin faz
+ * Version: 1.0
+ */
+
+# Utilize essa função para retornar o caminho atual
+require plugin_getdir('NomeDestePlugin') . '/inc/arquivo.class.php';
+...
+# Chama a função dentro da área de cabeçalho do tema
+add_filter('wp_head', 'plugin_xxx_head');
+...	
+# Invoca a função dentro do cabeçalho da página (desde que esteja definido)
+add_action('wp_head', 'plugin_style_head');
+...
+# Executa a função definida no rodapé do tema
+add_action('wp_footer', 'plugin_rodape');
+...	
+# Após carregar $lang acesse os dados "$lang['plugin']['archives']['chave']"
+$lang = lang_load('plugin:NomeDestePlugin');
+...
+# Registra o plugin 'archives
+register_widget('nomedesteplugin', 'NomeDestePlugin', 'plugin_NomeDestePlugin_widget');
+	
+?&gt;
+</code>			
+
+					<h4>Constantes</h4>
+					
 					<p>Usando as variáveis abaixo é possível entrar/referenciar um diretório Plugin: <span>PLUGINS_DIR/plugin.PLUGINNAME/PLUGINFILE</span></p>
 					
 					<ul class="disc line-reduce">
-						<li><span>PLUGINS_DIR</span> - O diretório onde os Plugins estão armazenados </li>
-						<li><span>PLUGINNAME</span> - Nome do Plugin</li>
+						<li><span>PLUGINS_DIR</span> - O diretório onde as extensões estão armazenadas</li>
+						<li><span>PLUGINNAME</span> - Nome da extensão</li>
 					</ul>		
 					
 					<p>Outras variáveis podem ser encontradas em <code>\admin\panels\entry\admin.entry.commentlist.tpl</code></p>
