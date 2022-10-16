@@ -280,7 +280,10 @@ fp-interface/
 	
 							   index.tpl							&lt;- Página de entrada do tema (blog ou site)
 							   default.tpl							&lt;- Página padrão utilizada na paginação, no comentário, página de erro etc
+	
 							   static.tpl							&lt;- Requerido quando há páginas estáticas, por exemplo, página 'Sobre'
+							   previewstatic.tpl					&lt;- Se não interessar a pré-visualização, crie o arquivo com o
+																	   texto "Pré-visualização Desativada"
 	
 							   comments.tpl							&lt;- Template necessário ao chamar a URL com final '.../SeuArtigo/<b>comments</b>'
 																	   Não é obrigatório, deixe vazio caso não vá utilizar comentários ou essa URL
@@ -616,11 +619,16 @@ $style['style'] = 'default';
 ...
 	
 </code>
+					<p>Lembre que o valor após 'pos' acima deve estar registrada na configuração do arquivo <code>/theme.conf.php</code> utilizando register_widgetset('valor').</p>
+										
 					<p>Caso queira definir um valor de pos, além dos informados acima, edite o arquivo <code>/fp-content/config/widgets.conf.php</code> e insira mais um valor no array.</p>
-					
-					
+										
 					<p>Leia mais sobre os <a href="informacoes-tecnicas.html#widgets">widgets</a> e o <a href="extensoes.html#dev">desenvolvimento das extensões e inserção no tema</a>.</p>
-						
+					
+					<p>O ideal é sempre separar os arquivos de template .tpl logicamente, por exemplo, navtop.tpl (para navegação no topo), header.tpl para cabeçalho e widget-left.tpl para coluna esquerda e etc, 
+						quando há mais de uma variável com o mesmo nome no mesmo arquivo, nesse caso o smarty irá processá-las separadamente. Simule o erro ao copiar o conteúdo de widgets.tpl do arquivo 
+						<a href="https://github.com/flatpressblog/flatpress/blob/master/fp-interface/themes/leggero/default.tpl">default.tpl</a> e colar na 5a linha.</p>
+					
 					<br><hr><br>
 					<p><small>Mais informações no wiki oficial sobre <a href="https://wiki.flatpress.org/doc:tips:widgets">Widgets</a> e <a href="https://wiki.flatpress.org/doc:thememinihowto">criação de tema</a></small></p>
 				</div>
